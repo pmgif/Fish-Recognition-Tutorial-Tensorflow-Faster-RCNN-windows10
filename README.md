@@ -90,3 +90,4 @@ C:\Users\Madi> Conda activate tensorflow
 - Run code ดังกล่าว เพื่อเรียกใช้งาน GPU
 
 ### 2. เตรียมภาพ
+เราจะใช้โปรแกรม LabelImg เวอร์ชัน 1.6 ในส่วนของการตีกรอบภาพ สามารถดาวน์โหลดได้จาก[ลิ้งค์](https://upload.i4th.in.th/th/download.php?id=5EC7F5F01)นี้
