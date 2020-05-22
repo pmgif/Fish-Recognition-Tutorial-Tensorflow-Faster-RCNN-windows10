@@ -2,7 +2,7 @@
 บทความนี้สอนเกี่ยวกับวิธีใช้ API การตรวจจับวัตถุของ Tensorflow เพื่อฝึกอบรมแยกประเภทการตรวจจับวัตถุสำหรับวัตถุหลาย ๆ ตัวใน Windows 10 เขียนโดยใช้ Tensorflow เวอร์ชัน 1.15 โดยใช้การรู้จำปลาโดยใช้อัลกอริธึม Faster R-CNN
 
 #### ฉันได้จัดทำวีดีโอบน YouTube ที่ทำตามบทความนี้ เพื่อให้เข้าใจมากยิ่งขึ้น
-[![cbadf04d8b69b3e3fa68758ce69c33c8.md.jpg](https://www.img.in.th/images/cbadf04d8b69b3e3fa68758ce69c33c8.md.jpg)](https://youtu.be/Rgpfk6eYxJA)
+[![cbadf04d8b69b3e3fa68758ce69c33c8.md.jpg](https://www.img.in.th/images/cbadf04d8b69b3e3fa68758ce69c33c8.md.jpg)](https://youtu.be/Rgpfk6eYxJA "Fish Recognition Tutorial Tensorflow Faster-RCNN windows10 - Click to Watch!")
 
 *ที่มา : การติดตั้งโปรแกรม จาก [Jeff Heaton](https://youtu.be/qrkEYf-YDyI) และ การทำ Tensorflow จาก [EdjeElectronics](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10)*
 
