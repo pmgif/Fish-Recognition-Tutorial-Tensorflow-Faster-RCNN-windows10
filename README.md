@@ -94,12 +94,20 @@ C:\Users\Madi> Conda activate tensorflow
 - สร้างแฟ้มข้อมูลในไดร์ฟ C: โดยตั้งชื่อว่า tensorflow
 - ดาวน์โหลด full TensorFlow object detection จาก [models-master](https://github.com/tensorflow/models)
 - เปลี่ยนชื่อแฟ้มข้อมูลจาก “models-master” เป็น “models” และนำแฟ้มข้อมูลดังกล่าว ย้ายมาไว้ในแฟ้มข้อมูล tensorflow
-#### 2a. ดาวน์โหลด Faster-RCNN-Inception-V2-COCO model from TensorFlow's model zoo
-สามารถเลือกโมเดลอย่างอื่นที่เราต้องการแทนได้ โดยไม่จำเป็นต้องใช้ Faster-RCNN-Inception-V2-COCO model เราสามารถเลือกใช้ให้ตรงกับจุดประสงค์ของเรา โดยสามารถเข้าไปดูได้ที่[Tensorflow detection model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models) แล้วทำการเลือกโมเดลที่เราต้องการ
+#### 2b. ดาวน์โหลด Faster-RCNN-Inception-V2-COCO model from TensorFlow's model zoo
+สามารถเลือกโมเดลอย่างอื่นที่เราต้องการแทนได้ โดยไม่จำเป็นต้องใช้ Faster-RCNN-Inception-V2-COCO model เราสามารถเลือกใช้ให้ตรงกับจุดประสงค์ของเรา โดยสามารถเข้าไปดูได้ที่ [Tensorflow detection model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models) แล้วทำการเลือกโมเดลที่เราต้องการ
 
 หรือจะใช้ Faster-RCNN-Inception-V2-COCO model ก็ได้ โดยสามารถดาวน์โหลดได้โดยตรงจาก [Faster-RCNN](https://www.dropbox.com/s/nrp2xp3bk71zzje/faster_rcnn_inception_v2_coco_2018_01_28.tar.gz?dl=1) จากนั้นย้ายแฟ้มข้อมูล faster_rcnn_inception_v2_coco_2018_01_28 มาไว้ใน C:\tensorflow\models\research\object_detection
-
-
+#### 2c. ดาวน์โหลด model จาก Github
+ทำการดาวน์โหลด model เพิ่มเติมจาก GitHub นี้ จากนั้นย้ายข้อมูลในแฟ้มข้อมูล [ของกิ๊ฟ] ลงใน object_detection เนื่องจากมีไฟล์ซ้ำ ให้แทนที่ไฟล์ในแฟ้มข้อมูล จากนั้นทำตามขั้นตอนนี้
+- ลบไฟล์ทุกไฟล์ในแฟ้มข้อมูล C:\tensorflow\models\research\object_detection\training
+- ลบไฟล์ทุกไฟล์ในแฟ้มข้อมูล C:\tensorflow\models\research\object_detection\inference_graph
+- ลบไฟล์ excel ในแฟ้มข้อมูล C:\tensorflow\models\research\object_detection\images
+- ลบข้อมูลทั้งหมดในแฟ้มข้อมูล (หากต้องการใช้ข้อมูลของตนเอง)
+  C:\tensorflow7\models\research\object_detection\images\test
+  C:\tensorflow7\models\research\object_detection\images\train
+  * หรือจะใช้ข้อมูลที่มีให้ก็ได้
+  
 ### 3. เตรียมภาพ
 เราจะใช้โปรแกรม LabelImg เวอร์ชัน 1.6 ในส่วนของการตีกรอบภาพ สามารถดาวน์โหลดได้จาก[ลิ้งค์](https://www.dropbox.com/s/fc1e9b3jyy9udkm/windows_v1.6.0.zip?dl=1)นี้
 ![339b3b9ebb0f6c2a11f003b16b80a461.png](https://www.img.in.th/images/339b3b9ebb0f6c2a11f003b16b80a461.png)
