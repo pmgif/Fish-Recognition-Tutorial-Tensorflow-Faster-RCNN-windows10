@@ -24,5 +24,5 @@
 เข้าไปที่เว็บไซต์ [CUDA](https://developer.nvidia.com/cuda-10.0-download-archive) โดยกดเลือกให้ตรงกับที่ต้องการ ดังรูปภาพ
 ![54dd1b6d53693fe6823973bf9ed32244.jpg](https://www.img.in.th/images/54dd1b6d53693fe6823973bf9ed32244.jpg)
 ### 1e. ติดตั้ง cuDNN 7.6.5
-เข้าไปที่เว็บไซต์ [cuDNN](https://developer.nvidia.com/cudnn) โดยกดเลือกให้ตรงกับเวอร์ชันของ [CUDA][### 1d. ติดตั้ง CUDA 10.0] ดังรูปภาพ
+เข้าไปที่เว็บไซต์ [cuDNN](https://developer.nvidia.com/cudnn) โดยกดเลือกให้ตรงกับเวอร์ชันของ [CUDA][1d. ติดตั้ง CUDA 10.0] ดังรูปภาพ
 ![734842c8688a364327c01c61176675d0.jpg](https://www.img.in.th/images/734842c8688a364327c01c61176675d0.jpg)
