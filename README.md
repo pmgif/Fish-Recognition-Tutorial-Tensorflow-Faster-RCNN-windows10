@@ -44,5 +44,36 @@ SET PATH=C:\tools\cuda\bin;.
 ### 1i. ติดตั้ง Python 3.7.6
 เข้าไปที่เว็บไซต์ [Python](https://www.python.org/downloads/) โดยเลือกเวอร์ชันที่ต้องการใช้ ทำการตั้งค่าให้ตรงกับภาพนี้
 ![e330a2dcfde9aba39402ed300d867b5a.jpg](https://www.img.in.th/images/e330a2dcfde9aba39402ed300d867b5a.jpg)
-
-
+### 1j. ติดตั้ง ติดตั้ง Jupyter
+เปิดใช้งานโปรแกรม Command Prompt ขึ้นมา พิมพ์คำสั่งดังนี้
+```
+C:\Users\Madi> conda install jupyter
+```
+### 1k. ประมวลผล Setup Script
+- ค้นหาที่อยู่ของไฟล์ .yml
+```
+C:\Users\Madi> dir *.yml
+```
+- สร้าง Environment ของ tensorflow.yml
+```
+C:\Users\Madi> conda env create -v -f tensorflow.yml
+```
+### 1l. ติดตั้ง Jupyter Kernel
+- เปิดใช้งาน environment tensorflow
+```
+C:\Users\Madi> Conda activate tensorflow
+```
+- ติดตั้ง Jupyter Kernel ของ python
+```
+(tensorflow) C:\Users\Madi> python -m ipykernel install --user --name tensorflow --display-name "Python 3.7 (tensorflow)"
+```
+- ทดลองเขียน python เพื่อทดสอบการใช้งานของ tensorflow
+```
+(tensorflow) C:\Users\Madi> python
+```
+```
+>>> import tensorflow as tf
+>>> print(tf.__version__)
+>>> quit()
+```
+### 1m. ทดสอบการทำงานของ Tensorflow
