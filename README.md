@@ -8,23 +8,23 @@
 
 **ขั้นตอนการจัดทำมีดังนี้**
 
-[1. ติดตั้งโปรแกรม](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#1-ติดตั้งโปรแกรม)
+  [1. ติดตั้งโปรแกรม](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#1-ติดตั้งโปรแกรม)
 
-[2. ตั้งค่า Tensorflow และ Anaconda](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#2-ตั้งค่า-Tensorflow-และ-Anaconda)
+  [2. ตั้งค่า Tensorflow และ Anaconda](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#2-ตั้งค่า-Tensorflow-และ-Anaconda)
 
-[3. เตรียมภาพ](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#3-เตรียมภาพ)
+  [3. เตรียมภาพ](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#3-เตรียมภาพ)
 
-[4. สร้าง Anaconda virtual environment ใหม่](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#4-สร้าง-Anaconda-virtual-environment-ใหม่)
+  [4. สร้าง Anaconda virtual environment ใหม่](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#4-สร้าง-Anaconda-virtual-environment-ใหม่)
 
-[5. สร้างข้อมูลการฝึกอบรม](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#5-สร้างข้อมูลการฝึกอบรม)
+  [5. สร้างข้อมูลการฝึกอบรม](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#5-สร้างข้อมูลการฝึกอบรม)
 
-[6. สร้าง Label Map และ กำหนดค่าการฝึกอบรม](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#6-สร้าง-Label-Map-และ-กำหนดค่าการฝึกอบรม)
+  [6. สร้าง Label Map และ กำหนดค่าการฝึกอบรม](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#6-สร้าง-Label-Map-และ-กำหนดค่าการฝึกอบรม)
 
-[7. ฝึกสอนแบบจำลอง](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#7-ฝึกสอนแบบจำลอง)
+  [7. ฝึกสอนแบบจำลอง](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#7-ฝึกสอนแบบจำลอง)
 
-[8. Export Inference Graph](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#8-Export-Inference-Graph)
+  [8. Export Inference Graph](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#8-Export-Inference-Graph)
 
-[9. ทดสอบแบบจำลอง](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#9-ทดสอบแบบจำลอง)
+  [9. ทดสอบแบบจำลอง](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#9-ทดสอบแบบจำลอง)
 
 ## แนะนำ
 บทความนี้ทำเพื่อให้ข้อมูลการทำ Object Detection จากนิสิตมหาวิทยาลัยบูรพา ได้ทำการถ่ายภาพปลาจากสถาบันวิทยาศาสตร์ทางทะเล มหาวิทยาลัยบูรพา โดยมีข้อมูลภาพปลาทั้งหมด 8 สายพันธุ์ได้แก่
