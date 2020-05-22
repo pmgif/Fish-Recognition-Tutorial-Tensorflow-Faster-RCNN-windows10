@@ -7,7 +7,27 @@
 
 **ขั้นตอนการจัดทำมีดังนี้**
 
-1. 
+1. ติดตั้งโปรแกรม
+2. ตั้งค่า Tensorflow และ Anaconda
+3. เตรียมภาพ
+4. สร้าง Anaconda virtual environment ใหม่
+5. สร้างข้อมูลการฝึกอบรม
+6. สร้าง Label Map และ กำหนดค่าการฝึกอบรม
+7. ฝึกสอนแบบจำลอง
+8. Export Inference Graph
+9. ทดสอบแบบจำลอง
+
+## แนะนำ
+บทความนี้ทำเพื่อให้ข้อมูลการทำ Object Detection จากนิสิตมหาวิทยาลัยบูรพา ได้ทำการถ่ายภาพปลาจากสถาบันวิทยาศาสตร์ทางทะเล มหาวิทยาลัยบูรพา โดยมีข้อมูลภาพปลาทั้งหมด 8 สายพันธุ์ได้แก่
+  1. ปลาผีเสื้อครีบยาว (Pennant coralfish)
+  2. ปลาสินสมุทร (Blue ring angelfish)
+  3. ปลาเขียวพระอินทร์ (Moon wrasse)
+  4. ปลาสลิดน้ำเงิน (Sapphire devil) 
+  5. ปลาผีเสื้อขอบทอง (Black-backed butterflyfish)
+  6. ปลาพยาบาล (Bluesteak cleaner wrasse)
+  7. ปลาผีเสื้อเกล็ดมุก (Threadfin butterflyfish)
+  8. ปลาขี้ตังเบ็ดหัวเรียบ (Orangespine unicornfish)
+โดยใช้จำนวนภาพทั้งหมด 10,000 ภาพ โดยแบ่งเป็นสายพันธุ์ละ 1,250 ภาพ และแบ่งเป็นภาพที่ใช้ในการทำแบบจำลอง 1,000 ภาพ ภาพที่ใช้ทดสอบ 250 ภาพ
 
 ## ขั้นตอน
 
@@ -166,6 +186,8 @@ protoc --python_out=. .\object_detection\protos\anchor_generator.proto .\object_
 (tensorflow) C:\tensorflow7\models\research> python setup.py build 
 (tensorflow) C:\tensorflow7\models\research> python setup.py install
 ```
+
+### 5. สร้างข้อมูลการฝึกอบรม
 - เปลี่ยน directories
 ```
 (tensorflow) C:\tensorflow\models\research> cd object_detection
@@ -174,6 +196,8 @@ protoc --python_out=. .\object_detection\protos\anchor_generator.proto .\object_
 ```
 (tensorflow) C:\tensorflow\models\research\object_detection> python xml_to_csv.py
 ```
+
+### 6. สร้าง Label Map และ กำหนดค่าการฝึกอบรม
 - แก้ไขไฟล์ generate_tfrecord.py จากโฟลเดอร์ \object_detection เพื่อระบุ label map ของตัวรูปแบบจำลอง
 ```
 # TO-DO replace this with label map 
@@ -299,6 +323,8 @@ input_path : "C:/tensorflow/models/research/object_detection/test.record"
 ```
 label_map_path: "C:/tensorflow/models/research/object_detection/training/labelmap.pbtxt"
 ```
+
+### 7. ฝึกสอนแบบจำลอง
 - ย้ายไฟล์ train.py ที่อยู่ในแฟ้มข้อมูล / object_detection / legacy ไปที่แฟ้มข้อมูล / object_detection
 - พิมพ์คำสั่งเพื่อฝึกสอนแบบจำลอง
 ```
@@ -314,16 +340,18 @@ TensorFlow จะเริ่มต้นการฝึกสอนแบบจ
 ![27577961e6cb7f0da3ca7b90a7eb481b.jpg](https://www.img.in.th/images/27577961e6cb7f0da3ca7b90a7eb481b.jpg)
 - เมื่อการฝึกสอนแบบจำลองเสร็จสิ้นตามจำนวนรอบการฝึกสอนแบบจำลอง จะแสดงข้อความ “Finished training! Saving model to disk.” หรือเราสามารถทำกรหยุดการฝึกสอนแบบจำลองเมื่อเราพอใจในค่า loss ได้ โดยทำการ *Ctrl+C*
 ![7042b525f9b9c531083b9a2e8cdd7b4e.jpg](https://www.img.in.th/images/7042b525f9b9c531083b9a2e8cdd7b4e.jpg)
+
+### 8. Export Inference Graph
 - สร้างไฟล์แบบจำลอง (ไฟล์ .pb) จากโฟลเดอร์ \ object_detection โดยที่ “model.ckpt-100000” คือหมายเลขสูงสุดของไฟล์ .ckpt ในโฟลเดอร์ \ training
 ```
 python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/faster_rcnn_inception_v2_pets.config --trained_checkpoint_prefix training/model.ckpt-100000 --output_directory inference_graph
 ```
+
+### 9. ทดสอบแบบจำลอง
 - เรียกใช้สคริปต์โดยพิมพ์ลงในพรอมต์คำสั่งของ Anaconda (เมื่อเปิดใช้งาน environment “tensorflow”) แล้วกด ENTER ซึ่งคำสั่งนี้จะเป็นการเปิด python shell เพื่อเรียกใช้งานสคริปต์ต่าง ๆ
 ```
 (tensorflow) C:\tensorflow\models\research\object_detection> idle
 ```
-
-### 5. ทดสอบแบบจำลอง
 ในขั้นตอนนี้เป็นการทดสอบแบบจำลอง โดยใช้ภาพปลาในการทดสอบสายพันธุ์ละ 250 ภาพ มีกระบวนการ ดังนี้
 - เปิดไฟล์ Object_detection_image.py จากแฟ้มข้อมูล \ object_detection
 - บรรทัดที่ 50 แก้ไขจำนวน num class ของไฟล์ Object_detection_image.py
