@@ -77,3 +77,4 @@ C:\Users\Madi> Conda activate tensorflow
 >>> quit()
 ```
 ### 1m. ทดสอบการทำงานของ Tensorflow
+เข้าไปที่ [เว็บไซต์](https://github.com/jeffheaton/t81_558_deep_learning)
