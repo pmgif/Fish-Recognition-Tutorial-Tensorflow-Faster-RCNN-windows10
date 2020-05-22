@@ -335,4 +335,4 @@ NUM_CLASSES = 8
 IMAGE_NAME = 'test1.jpg'
 ```
 - ตัวอย่างผลการประมวลผล code จากไฟล์ Object_detection_image.py สำเร็จ
-![cbadf04d8b69b3e3fa68758ce69c33c8.jpg](https://www.img.in.th/images/cbadf04d8b69b3e3fa68758ce69c33c8.jpg)
+[![cbadf04d8b69b3e3fa68758ce69c33c8.md.jpg](https://www.img.in.th/images/cbadf04d8b69b3e3fa68758ce69c33c8.md.jpg)](https://www.img.in.th/image/U8UAFO)
