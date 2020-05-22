@@ -324,3 +324,15 @@ python export_inference_graph.py --input_type image_tensor --pipeline_config_pat
 ```
 
 ### 5. ทดสอบแบบจำลอง
+ในขั้นตอนนี้เป็นการทดสอบแบบจำลอง โดยใช้ภาพปลาในการทดสอบสายพันธุ์ละ 250 ภาพ มีกระบวนการ ดังนี้
+- เปิดไฟล์ Object_detection_image.py จากแฟ้มข้อมูล \ object_detection
+- บรรทัดที่ 50 แก้ไขจำนวน num class ของไฟล์ Object_detection_image.py
+```
+NUM_CLASSES = 8
+```
+- บรรทัดที่ 34 แก้ไขชื่อภาพที่ต้องการทดสอบ เมื่อแก้ไขสำเร็จแล้ว กดปุ่ม F5 เพื่อประมวลผลโปรแกรม
+```
+IMAGE_NAME = 'test1.jpg'
+```
+- ตัวอย่างผลการประมวลผล code จากไฟล์ Object_detection_image.py สำเร็จ
+![cbadf04d8b69b3e3fa68758ce69c33c8.jpg](https://www.img.in.th/images/cbadf04d8b69b3e3fa68758ce69c33c8.jpg)
