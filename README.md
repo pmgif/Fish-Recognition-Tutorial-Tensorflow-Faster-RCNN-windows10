@@ -3,7 +3,7 @@
 
 #### ฉันได้จัดทำวีดีโอบน YouTube ที่ทำตามบทความนี้ เพื่อให้เข้าใจมากยิ่งขึ้น
 
-ที่มา : การติดตั้งโปรแกรม จาก [Jeff Heaton](https://youtu.be/qrkEYf-YDyI) และ การทำ Tensorflow จาก [EdjeElectronics](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10)
+*ที่มา : การติดตั้งโปรแกรม จาก [Jeff Heaton](https://youtu.be/qrkEYf-YDyI) และ การทำ Tensorflow จาก [EdjeElectronics](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10)*
 
 **ขั้นตอนการจัดทำมีดังนี้**
 
@@ -27,6 +27,7 @@
   6. ปลาพยาบาล (Bluesteak cleaner wrasse)
   7. ปลาผีเสื้อเกล็ดมุก (Threadfin butterflyfish)
   8. ปลาขี้ตังเบ็ดหัวเรียบ (Orangespine unicornfish)
+  
 โดยใช้จำนวนภาพทั้งหมด 10,000 ภาพ โดยแบ่งเป็นสายพันธุ์ละ 1,250 ภาพ และแบ่งเป็นภาพที่ใช้ในการทำแบบจำลอง 1,000 ภาพ ภาพที่ใช้ทดสอบ 250 ภาพ
 
 ## ขั้นตอน
