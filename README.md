@@ -104,8 +104,11 @@ C:\Users\Madi> Conda activate tensorflow
 - ลบไฟล์ทุกไฟล์ในแฟ้มข้อมูล C:\tensorflow\models\research\object_detection\inference_graph
 - ลบไฟล์ excel ในแฟ้มข้อมูล C:\tensorflow\models\research\object_detection\images
 - ลบข้อมูลทั้งหมดในแฟ้มข้อมูล (หากต้องการใช้ข้อมูลของตนเอง)
+
   C:\tensorflow7\models\research\object_detection\images\test
+  
   C:\tensorflow7\models\research\object_detection\images\train
+  
   * หรือจะใช้ข้อมูลที่มีให้ก็ได้
   
 ### 3. เตรียมภาพ
