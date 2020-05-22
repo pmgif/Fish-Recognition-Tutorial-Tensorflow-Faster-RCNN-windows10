@@ -109,7 +109,7 @@ C:\Users\Madi> Conda activate tensorflow
 ```
 - เปลี่ยนประเภทของ kernel จากเวอร์ชัน 3 เป็นเวอร์ชัน 3.7
 - Run code ดังกล่าว เพื่อเรียกใช้งาน GPU
-
+***
 ### 2. ตั้งค่า Tensorflow และ Anaconda
 #### 2a. ดาวน์โหลด Tensorflow model
 - สร้างแฟ้มข้อมูลในไดร์ฟ C: โดยตั้งชื่อว่า tensorflow
@@ -129,12 +129,12 @@ C:\Users\Madi> Conda activate tensorflow
   C:\tensorflow7\models\research\object_detection\images\test
   
   C:\tensorflow7\models\research\object_detection\images\train
-
+***
 ### 3. เตรียมภาพ
 เราจะใช้โปรแกรม LabelImg เวอร์ชัน 1.6 ในส่วนของการตีกรอบภาพ สามารถดาวน์โหลดได้จาก [LabelImg](https://www.dropbox.com/s/fc1e9b3jyy9udkm/windows_v1.6.0.zip?dl=1)นี้
 ![339b3b9ebb0f6c2a11f003b16b80a461.png](https://www.img.in.th/images/339b3b9ebb0f6c2a11f003b16b80a461.png)
 เมื่อเราทำการตีกรอบภาพเสร็จแล้ว โปรแกรม LabelImg จะบันทึกเป็นไฟล์ .xml
-
+***
 ### 4. สร้าง Anaconda virtual environment ใหม่
 - เปิดโปรแกรม Anaconda Prompt โดยเลือกเป็น “Run as Administrator”
 - พิมพ์คำสั่งเพื่อสร้าง virtual environment ขึ้นมาใหม่ โดยตั้งชื่อว่า tensorflow พร้อมกับติดตั้ง python เวอร์ชัน 3.7
@@ -187,7 +187,7 @@ protoc --python_out=. .\object_detection\protos\anchor_generator.proto .\object_
 (tensorflow) C:\tensorflow7\models\research> python setup.py build 
 (tensorflow) C:\tensorflow7\models\research> python setup.py install
 ```
-
+***
 ### 5. สร้างข้อมูลการฝึกอบรม
 - เปลี่ยน directories
 ```
@@ -197,7 +197,7 @@ protoc --python_out=. .\object_detection\protos\anchor_generator.proto .\object_
 ```
 (tensorflow) C:\tensorflow\models\research\object_detection> python xml_to_csv.py
 ```
-
+***
 ### 6. สร้าง Label Map และ กำหนดค่าการฝึกอบรม
 - แก้ไขไฟล์ generate_tfrecord.py จากโฟลเดอร์ \object_detection เพื่อระบุ label map ของตัวรูปแบบจำลอง
 ```
@@ -324,7 +324,7 @@ input_path : "C:/tensorflow/models/research/object_detection/test.record"
 ```
 label_map_path: "C:/tensorflow/models/research/object_detection/training/labelmap.pbtxt"
 ```
-
+***
 ### 7. ฝึกสอนแบบจำลอง
 - ย้ายไฟล์ train.py ที่อยู่ในแฟ้มข้อมูล / object_detection / legacy ไปที่แฟ้มข้อมูล / object_detection
 - พิมพ์คำสั่งเพื่อฝึกสอนแบบจำลอง
@@ -341,13 +341,13 @@ TensorFlow จะเริ่มต้นการฝึกสอนแบบจ
 ![27577961e6cb7f0da3ca7b90a7eb481b.jpg](https://www.img.in.th/images/27577961e6cb7f0da3ca7b90a7eb481b.jpg)
 - เมื่อการฝึกสอนแบบจำลองเสร็จสิ้นตามจำนวนรอบการฝึกสอนแบบจำลอง จะแสดงข้อความ “Finished training! Saving model to disk.” หรือเราสามารถทำกรหยุดการฝึกสอนแบบจำลองเมื่อเราพอใจในค่า loss ได้ โดยทำการ *Ctrl+C*
 ![7042b525f9b9c531083b9a2e8cdd7b4e.jpg](https://www.img.in.th/images/7042b525f9b9c531083b9a2e8cdd7b4e.jpg)
-
+***
 ### 8. Export Inference Graph
 - สร้างไฟล์แบบจำลอง (ไฟล์ .pb) จากโฟลเดอร์ \ object_detection โดยที่ “model.ckpt-100000” คือหมายเลขสูงสุดของไฟล์ .ckpt ในโฟลเดอร์ \ training
 ```
 python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/faster_rcnn_inception_v2_pets.config --trained_checkpoint_prefix training/model.ckpt-100000 --output_directory inference_graph
 ```
-
+***
 ### 9. ทดสอบแบบจำลอง
 - เรียกใช้สคริปต์โดยพิมพ์ลงในพรอมต์คำสั่งของ Anaconda (เมื่อเปิดใช้งาน environment “tensorflow”) แล้วกด ENTER ซึ่งคำสั่งนี้จะเป็นการเปิด python shell เพื่อเรียกใช้งานสคริปต์ต่าง ๆ
 ```
