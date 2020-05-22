@@ -3,9 +3,9 @@
 
 #### ฉันได้จัดทำวีดีโอบน YouTube ที่ทำตามบทความนี้ เพื่อให้เข้าใจมากยิ่งขึ้น
 
-ที่มา : การติดตั้งโปรแกรม จาก @Jeff Heaton และ การทำ Tensorflow จาก @EdjeElectronics
+ที่มา : การติดตั้งโปรแกรม จาก @Jeff Heaton และ การทำ Tensorflow จาก [@EdjeElectronics](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#introduction)
 
-## ขั้นตอนการจัดทำมีดังนี้
+**ขั้นตอนการจัดทำมีดังนี้**
 
 1. 
 2.
@@ -17,6 +17,53 @@
 8.
 9.
 
-## ขั้นตอน
+### ขั้นตอน
 
-## 1. ติดตั้ง
+### 1. ติดตั้ง
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
