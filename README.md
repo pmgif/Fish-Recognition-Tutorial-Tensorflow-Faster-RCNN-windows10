@@ -103,15 +103,22 @@ C:\Users\Madi> Conda activate tensorflow
 - ลบไฟล์ทุกไฟล์ในแฟ้มข้อมูล C:\tensorflow\models\research\object_detection\training
 - ลบไฟล์ทุกไฟล์ในแฟ้มข้อมูล C:\tensorflow\models\research\object_detection\inference_graph
 - ลบไฟล์ excel ในแฟ้มข้อมูล C:\tensorflow\models\research\object_detection\images
-- ลบข้อมูลทั้งหมดในแฟ้มข้อมูล (หากต้องการใช้ข้อมูลของตนเอง)
+- ลบข้อมูลทั้งหมดในแฟ้มข้อมูล (หากต้องการใช้ข้อมูลของตนเอง  **หรือจะใช้ข้อมูลที่มีให้ก็ได้**)
 
   C:\tensorflow7\models\research\object_detection\images\test
   
   C:\tensorflow7\models\research\object_detection\images\train
-  
-  * หรือจะใช้ข้อมูลที่มีให้ก็ได้
-  
+
 ### 3. เตรียมภาพ
-เราจะใช้โปรแกรม LabelImg เวอร์ชัน 1.6 ในส่วนของการตีกรอบภาพ สามารถดาวน์โหลดได้จาก[ลิ้งค์](https://www.dropbox.com/s/fc1e9b3jyy9udkm/windows_v1.6.0.zip?dl=1)นี้
+เราจะใช้โปรแกรม LabelImg เวอร์ชัน 1.6 ในส่วนของการตีกรอบภาพ สามารถดาวน์โหลดได้จาก [LabelImg](https://www.dropbox.com/s/fc1e9b3jyy9udkm/windows_v1.6.0.zip?dl=1)นี้
 ![339b3b9ebb0f6c2a11f003b16b80a461.png](https://www.img.in.th/images/339b3b9ebb0f6c2a11f003b16b80a461.png)
 เมื่อเราทำการตีกรอบภาพเสร็จแล้ว โปรแกรม LabelImg จะบันทึกเป็นไฟล์ .xml
+
+### 4. สร้าง Anaconda virtual environment ใหม่
+เปิดโปรแกรม Anaconda Prompt โดยเลือกเป็น “Run as Administrator”
+
+พิมพ์คำสั่งเพื่อสร้าง virtual environment ขึ้นมาใหม่ โดยตั้งชื่อว่า tensorflow พร้อมกับติดตั้ง python เวอร์ชัน 3.7
+
+```
+C:\> conda create -n tensorflow pip python=3.7
+```
