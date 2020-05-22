@@ -91,3 +91,5 @@ C:\Users\Madi> Conda activate tensorflow
 
 ### 2. เตรียมภาพ
 เราจะใช้โปรแกรม LabelImg เวอร์ชัน 1.6 ในส่วนของการตีกรอบภาพ สามารถดาวน์โหลดได้จาก[ลิ้งค์](https://www.dropbox.com/s/fc1e9b3jyy9udkm/windows_v1.6.0.zip?dl=1)นี้
+![339b3b9ebb0f6c2a11f003b16b80a461.png](https://www.img.in.th/images/339b3b9ebb0f6c2a11f003b16b80a461.png)
+เมื่อเราทำการตีกรอบภาพเสร็จแล้ว โปรแกรม LabelImg จะบันทึกเป็นไฟล์ .xml
