@@ -8,7 +8,7 @@
 
 **ขั้นตอนการจัดทำมีดังนี้**
 
-[1. ติดตั้งโปรแกรม]()
+[1. ติดตั้งโปรแกรม](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#1-ติดตั้งโปรแกรม)
 [2. ตั้งค่า Tensorflow และ Anaconda]()
 [3. เตรียมภาพ]()
 [4. สร้าง Anaconda virtual environment ใหม่]()
