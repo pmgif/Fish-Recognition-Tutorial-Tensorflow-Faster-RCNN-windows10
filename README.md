@@ -3,7 +3,7 @@
 
 #### ฉันได้จัดทำวีดีโอบน YouTube ที่ทำตามบทความนี้ เพื่อให้เข้าใจมากยิ่งขึ้น
 
-ที่มา : การติดตั้งโปรแกรม จาก [@Jeff Heaton](https://youtu.be/qrkEYf-YDyI) และ การทำ Tensorflow จาก [@EdjeElectronics](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10)
+ที่มา : การติดตั้งโปรแกรม จาก [Jeff Heaton](https://youtu.be/qrkEYf-YDyI) และ การทำ Tensorflow จาก [EdjeElectronics](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10)
 
 **ขั้นตอนการจัดทำมีดังนี้**
 
