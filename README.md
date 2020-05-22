@@ -115,10 +115,212 @@ C:\Users\Madi> Conda activate tensorflow
 เมื่อเราทำการตีกรอบภาพเสร็จแล้ว โปรแกรม LabelImg จะบันทึกเป็นไฟล์ .xml
 
 ### 4. สร้าง Anaconda virtual environment ใหม่
-เปิดโปรแกรม Anaconda Prompt โดยเลือกเป็น “Run as Administrator”
-
-พิมพ์คำสั่งเพื่อสร้าง virtual environment ขึ้นมาใหม่ โดยตั้งชื่อว่า tensorflow พร้อมกับติดตั้ง python เวอร์ชัน 3.7
-
+- เปิดโปรแกรม Anaconda Prompt โดยเลือกเป็น “Run as Administrator”
+- พิมพ์คำสั่งเพื่อสร้าง virtual environment ขึ้นมาใหม่ โดยตั้งชื่อว่า tensorflow พร้อมกับติดตั้ง python เวอร์ชัน 3.7
 ```
 C:\> conda create -n tensorflow pip python=3.7
 ```
+- เปิดใช้งาน environment
+```
+C:\> activate tensorflow
+```
+- อัปเดทเวอร์ชันของ pip ให้เป็นเวอร์ชันล่าสุด
+```
+(tensorflow) C:\>python -m pip install --upgrade pip
+```
+- ติดตั้ง tensorflow-gpu เวอร์ชัน 1.15
+*(เนื่องจากเวอร์ชัน tensorflow-gpu ที่ลงตอนติดตั้ง jupyter เป็นเวอร์ชัน 2.0.0 ไม่สามารถใช้ทดสอบได้ จึงเปลี่ยนเป็น tensorflow-gpu เวอร์ชัน 1.15 สามารถพิมพ์คำสั่งลงไปได้เลย เนื่องจากตัวโปรแกรมจะถอนการติดตั้ง tensorflow-gpu เวอร์ชัน 2.0.0 ให้อัตโนมัติ)*
+```
+(tensorflow) C:\> pip install --ignore-installed --upgrade tensorflow-gpu==1.15
+```
+- ติดตั้งแพคเกจย่อยอื่น ๆ
+```
+(tensorflow) C:\> conda install -c anaconda protobuf 
+(tensorflow) C:\> pip install pillow 
+(tensorflow) C:\> pip install lxml 
+(tensorflow) C:\> pip install Cython 
+(tensorflow) C:\> pip install contextlib2 
+(tensorflow) C:\> pip install jupyter 
+(tensorflow) C:\> pip install matplotlib 
+(tensorflow) C:\> pip install pandas 
+(tensorflow) C:\> pip install opencv-python
+```
+- กำหนด PYTHONPATH
+```
+(tensorflow) C:\> set PYTHONPATH=C:\tensorflow\models;C:\tensorflow\models\research;C:\tensorflow\models\research\slim
+```
+- สามารถตรวจสอบ PYTHONPATH ได้
+```
+(tensorflow) C:\> echo %PYTHONPATH%
+```
+- เปลี่ยน directories
+```
+(tensorflow) C:\> cd C:\tensorflow\models\research
+```
+- Tensorflow ใช้ Protobuf เพื่อกำหนดค่าแบบจำลองและพารามิเตอร์ของการฝึกสอนแบบจำลอง โดยสิ่งนี้จะสร้างไฟล์ name_pb2.py ไว้ในโฟลเดอร์ \ object_detection \ protos
+```
+protoc --python_out=. .\object_detection\protos\anchor_generator.proto .\object_detection\protos\argmax_matcher.proto .\object_detection\protos\bipartite_matcher.proto .\object_detection\protos\box_coder.proto .\object_detection\protos\box_predictor.proto .\object_detection\protos\eval.proto .\object_detection\protos\faster_rcnn.proto .\object_detection\protos\faster_rcnn_box_coder.proto .\object_detection\protos\grid_anchor_generator.proto .\object_detection\protos\hyperparams.proto .\object_detection\protos\image_resizer.proto .\object_detection\protos\input_reader.proto .\object_detection\protos\losses.proto .\object_detection\protos\matcher.proto .\object_detection\protos\mean_stddev_box_coder.proto .\object_detection\protos\model.proto .\object_detection\protos\optimizer.proto .\object_detection\protos\pipeline.proto .\object_detection\protos\post_processing.proto.\object_detection\protos\preprocessor.proto .\object_detection\protos\region_similarity_calculator.proto .\object_detection\protos\square_box_coder.proto .\object_detection\protos\ssd.proto .\object_detection\protos\ssd_anchor_generator.proto .\object_detection\protos\string_int_label_map.proto .\object_detection\protos\train.proto .\object_detection\protos\keypoint_box_coder.proto .\object_detection\protos\multiscale_anchor_generator.proto .\object_detection\protos\graph_rewriter.proto .\object_detection\protos\calibration.proto .\object_detection\protos\flexible_grid_anchor_generator.proto
+```
+- รวบรวมไฟล์ protoc แบบสั้นที่สำหรับการติดตั้ง Object Detection API ของ TensorFlow นั้น ไม่สามารถทำงานบน Windows ได้ ดังนั้นไฟล์ .proto ทุกไฟล์ในไดเร็กทอรี \ object_detection \ protos จึงต้องถูกเรียกใช้โดยคำสั่งทีละรายการ
+```
+(tensorflow) C:\tensorflow7\models\research> python setup.py build 
+(tensorflow) C:\tensorflow7\models\research> python setup.py install
+```
+- เปลี่ยน directories
+```
+(tensorflow) C:\tensorflow\models\research> cd object_detection
+```
+- นำไฟล์ข้อมูลภาพ .xml ที่มีข้อมูลทั้งหมดในแฟ้มข้อมูล train และ test ไปแปลงไฟล์เพื่อสร้างไฟล์ .csv
+```
+(tensorflow) C:\tensorflow\models\research\object_detection> python xml_to_csv.py
+```
+- แก้ไขไฟล์ generate_tfrecord.py จากโฟลเดอร์ \object_detection เพื่อระบุ label map ของตัวรูปแบบจำลอง
+```
+# TO-DO replace this with label map 
+def class_text_to_int(row_label): 
+  if row_label == 'Pennant coralfish': 
+    return 1 
+  elif row_label == 'Moon wrasse': 
+    return 2 
+  elif row_label == 'Sapphire devil': 
+    return 3 
+  elif row_label == 'Black-backed butterflyfish': 
+    return 4 
+  elif row_label == 'Blue ring angelfish':
+    return 5 
+  elif row_label == 'Threadfin butterflyfish': 
+    return 6 
+  elif row_label == 'Bluesteak cleaner wrasse': 
+    return 7 
+  elif row_label == 'Orangespine unicornfish': 
+    return 8 
+  else: 
+    return 0
+```
+หรือสามารถเปลี่ยนให้เป็นตาม class ชนิดอื่น ๆ ที่ได้ทำการตีกรอบไว้ จาก format นี้
+```
+# TO-DO replace this with label map 
+def class_text_to_int(row_label): 
+  if row_label == 'Name1': 
+    return 1 
+  elif row_label == 'Name2': 
+    return 2 
+  else: 
+    return 0
+```
+- สร้างไฟล์ TFRecord ของ train.record และ test.record ใน \ object_detection เพื่อใช้ในการฝึกสอนแบบจำลองการตรวจจับวัตถุใหม่
+```
+python generate_tfrecord.py --csv_input=images\train_labels.csv --image_dir=images\train --output_path=train.record
+python generate_tfrecord.py --csv_input=images\test_labels.csv --image_dir=images\test --output_path=test.record
+```
+- สร้างไฟล์ labelmap.pbtxt ลงในโฟลเดอร์ C: \ tensorflow \ models \ research \ object_detection \ training เพื่อกำหนดว่าแต่ละวัตถุคืออะไร โดยกำหนดชื่อคลาสและหมายเลข ID คลาส ให้ตรงกับชื่อคลาสและหมายเลข ID ของไฟล์ generate_tfrecord.py
+```
+item {
+  id: 1
+  name: 'Pennant coralfish'
+}
+
+item {
+  id: 2
+  name: 'Moon wrasse'
+}
+
+item {
+  id: 3
+  name: 'Sapphire devil'
+}
+
+item {
+  id: 4
+  name: 'Black-backed butterflyfish'
+}
+
+item {
+  id: 5
+  name: 'Blue ring angelfish'
+}
+
+item {
+  id: 6
+  name: 'Threadfin butterflyfish'
+}
+
+item {
+  id: 7
+  name: 'Bluesteak cleaner wrasse'
+}
+
+item {
+  id: 8
+  name: 'Orangespine unicornfish'
+}
+
+```
+หรือสามารถเปลี่ยนให้เป็นตาม class ชนิดอื่น ๆ จาก format นี้
+```
+item {
+  id: 1
+  name: 'Name1'
+}
+
+item {
+  id: 2
+  name: 'Name2'
+}
+```
+- คัดลอกไฟล์ faster_rcnn_inception_v2_pets.config จาก C: \ tensorflow7 \ models \ research \ object_detection \ samples \ configs ไปยัง \ object_detection \ training จากนั้นเปิดไฟล์ด้วยโปรแกรม notepad++ และแก้ไข code ซึ่งมีการเปลี่ยนแปลงหลายอย่างในไฟล์ .config
+  - บรรทัดที่ 9 เปลี่ยน num_classes (จำนวนของวัตถุต่าง ๆ ที่ต้องการให้ตัวแยกประเภทตรวจจับ) ในการฝึกสอนแบบจำลองมีจำนวนปลาที่ถูกนำมาฝึกสอนแบบจำลองทั้งหมด 8 สายพันธ์ุ
+```
+num_classes: 8
+```
+  - บรรทัดที่ 110 เปลี่ยนที่อยู่ของ fine_tune_checkpoint
+```
+fine_tune_checkpoint : "C:/tensorflow/models/research/object_detection/faster_rcnn_inception_v2_coco_2018_01_28/model.ckpt"
+```
+  - บรรทัดที่ 116 เปลี่ยนจำนวนรอบการฝึกสอนแบบจำลอง
+```
+num_steps: 100000
+```
+  - บรรทัดที่ 126 และ 128 ในส่วน train_input_reader เปลี่ยน input_path และ label_map_path
+```
+input_path : "C:/tensorflow/models/research/object_detection/train.record"
+```
+```
+label_map_path: "C:/tensorflow/models/research/object_detection/training/labelmap.pbtxt"
+```
+  - บรรทัดที่ 132 เปลี่ยน num_examples เป็นจำนวนภาพที่มีในแฟ้มข้อมูล \ images \ test
+```
+num_examples: 1600
+```
+  - บรรทัดที่ 140 และ 142 ในส่วน eval_input_reader เปลี่ยน input_path และ label_map_path
+```
+input_path : "C:/tensorflow/models/research/object_detection/test.record"
+```
+```
+label_map_path: "C:/tensorflow/models/research/object_detection/training/labelmap.pbtxt"
+```
+- ย้ายไฟล์ train.py ที่อยู่ในแฟ้มข้อมูล / object_detection / legacy ไปที่แฟ้มข้อมูล / object_detection
+- พิมพ์คำสั่งเพื่อฝึกสอนแบบจำลอง
+```
+python train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/faster_rcnn_inception_v2_pets.config
+```
+TensorFlow จะเริ่มต้นการฝึกสอนแบบจำลอง
+![0fc668a9c52296de3bcb95af2a7109b4.jpg](https://www.img.in.th/images/0fc668a9c52296de3bcb95af2a7109b4.jpg)
+- ระหว่างการฝึกสอนแบบจำลองสามารถดูความก้าวหน้าโดยใช้ TensorBoard โดยคำสั่งนี้จะต้องเปิดในอินสแตนซ์ใหม่ของ Anaconda Prompt และเปิดใช้งาน environment tensorflow เปลี่ยนเป็นไดเรกทอรี C: \ tensorflow \ models \ research \ object_detection และใช้คำสั่ง
+```
+(tensorflow7) C:\tensorflow7\models\research\object_detection>tensorboard --logdir=training
+```
+*โดย code ดังกล่าวจะสร้างเว็บเพจบนเครื่องคอมพิวเตอร์ YourPCName: 6006 สามารถดูได้ผ่านเว็บเบราว์เซอร์ หน้า TensorBoard จะให้ข้อมูลและกราฟที่แสดงว่าการฝึกสอนแบบจำลองมีความก้าวหน้าอย่างไร โดยกราฟนี้จะแสดงค่า loss ที่แสดงค่าความแม่นยำของแต่ละภาพในการฝึกสอนแบบจำลอง โดยแกน x หมายถึง ค่า Num Step (รอบการทำงาน) แกน y หมายถึง ค่า loss*
+![27577961e6cb7f0da3ca7b90a7eb481b.jpg](https://www.img.in.th/images/27577961e6cb7f0da3ca7b90a7eb481b.jpg)
+- เมื่อการฝึกสอนแบบจำลองเสร็จสิ้นตามจำนวนรอบการฝึกสอนแบบจำลอง จะแสดงข้อความ “Finished training! Saving model to disk.” หรือเราสามารถทำกรหยุดการฝึกสอนแบบจำลองเมื่อเราพอใจในค่า loss ได้ โดยทำการ *Ctrl+C*
+![7042b525f9b9c531083b9a2e8cdd7b4e.jpg](https://www.img.in.th/images/7042b525f9b9c531083b9a2e8cdd7b4e.jpg)
+- สร้างไฟล์แบบจำลอง (ไฟล์ .pb) จากโฟลเดอร์ \ object_detection โดยที่ “model.ckpt-100000” คือหมายเลขสูงสุดของไฟล์ .ckpt ในโฟลเดอร์ \ training
+```
+python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/faster_rcnn_inception_v2_pets.config --trained_checkpoint_prefix training/model.ckpt-100000 --output_directory inference_graph
+```
+- เรียกใช้สคริปต์โดยพิมพ์ลงในพรอมต์คำสั่งของ Anaconda (เมื่อเปิดใช้งาน environment “tensorflow”) แล้วกด ENTER ซึ่งคำสั่งนี้จะเป็นการเปิด python shell เพื่อเรียกใช้งานสคริปต์ต่าง ๆ
+```
+(tensorflow) C:\tensorflow\models\research\object_detection> idle
+```
+
+### 5. ทดสอบแบบจำลอง
