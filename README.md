@@ -77,4 +77,16 @@ C:\Users\Madi> Conda activate tensorflow
 >>> quit()
 ```
 ### 1m. ทดสอบการทำงานของ Tensorflow
-เข้าไปที่ [เว็บไซต์](https://github.com/jeffheaton/t81_558_deep_learning)
+เข้าไปที่ [เว็บไซต์](https://github.com/jeffheaton/t81_558_deep_learning) จากนั้นทำการโหลดไฟล์และแตกไฟล์
+- เปลี่ยน directory
+```
+(tensorflow) C:\Users\Madi> cd t81_558_deep_learning-master
+```
+- เรียกใช้ jupyter notebook แล้วเลือกไฟล์ t81_558_class_01_1_overview.ipynb
+```
+(tensorflow) C:\Users\Madi\t81_558_deep_learning-master> jupyter notebook
+```
+- เปลี่ยนประเภทของ kernel จากเวอร์ชัน 3 เป็นเวอร์ชัน 3.7
+- Run code ดังกล่าว เพื่อเรียกใช้งาน GPU
+
+#### 2. เตรียมภาพ
