@@ -47,7 +47,7 @@
 #### 1a. ติดตั้ง Visual Studio
 เข้าไปที่เว็บไซต์ [Visual Studio](https://visualstudio.microsoft.com/downloads/) และเลือกเวอร์ชันที่ต้องการ
 #### 1b. ดาวน์โหลด Setup Script
-เข้าไปที่เว็บไซต์ [Setup Script](https://github.com/jeffheaton/t81_558_deep_learning) และเลือกไฟล์ tensorflow-gpu.yml
+ทำการดาวน์โหลดไล์ [tensorflow-gpu.yml](https://www.dropbox.com/s/c7krpl8cp510ath/tensorflow-gpu.yml?dl=1)
 #### 1c. ติดตั้ง Driver Graphics
 เข้าไปที่เว็บไซต์ [Driver Graphics](https://www.nvidia.com/Download/index.aspx?lang=th) และเลือกเวอร์ชันไดร์เวอร์ให้ตรงกับ GPU ที่ใช้
 #### 1d. ติดตั้ง CUDA 10.0
