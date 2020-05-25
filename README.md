@@ -47,12 +47,12 @@
 #### 1a. ติดตั้ง Visual Studio
 เข้าไปที่เว็บไซต์ [Visual Studio](https://visualstudio.microsoft.com/downloads/) และเลือกเวอร์ชันที่ต้องการ
 #### 1b. ดาวน์โหลด Setup Script
-ทำการดาวน์โหลดไล์ [tensorflow-gpu.yml](https://www.dropbox.com/s/c7krpl8cp510ath/tensorflow-gpu.yml?dl=1)
+ทำการดาวน์โหลดไฟล์ [tensorflow-gpu.yml](https://www.dropbox.com/s/c7krpl8cp510ath/tensorflow-gpu.yml?dl=1) ไว้ที่ไดร์ฟ C
 #### 1c. ติดตั้ง Driver Graphics
 เข้าไปที่เว็บไซต์ [Driver Graphics](https://www.nvidia.com/Download/index.aspx?lang=th) และเลือกเวอร์ชันไดร์เวอร์ให้ตรงกับ GPU ที่ใช้
 #### 1d. ติดตั้ง CUDA 10.0
 เข้าไปที่เว็บไซต์ [CUDA](https://developer.nvidia.com/cuda-10.0-download-archive) โดยกดเลือกให้ตรงกับที่ต้องการ ดังรูปภาพ
-![54dd1b6d53693fe6823973bf9ed32244.jpg](https://www.img.in.th/images/54dd1b6d53693fe6823973bf9ed32244.jpg)
+![54dd1b6d53693fe6823973bf9ed32244.jpg](https://www.img.in.th/images/54dd1b6d53693fe6823973bf9ed32244.jpg) โดยการทำ Object Detection ครั้งนี้ ได้ใช้ CUDA เวอร์ชัน 10.0
 #### 1e. ติดตั้ง cuDNN 7.6.5
 เข้าไปที่เว็บไซต์ [cuDNN](https://developer.nvidia.com/cudnn) โดยกดเลือกให้ตรงกับเวอร์ชันของ [CUDA](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#1d-ติดตั้ง-cuda-100) ดังรูปภาพ
 ![734842c8688a364327c01c61176675d0.jpg](https://www.img.in.th/images/734842c8688a364327c01c61176675d0.jpg)
@@ -64,7 +64,7 @@ SET PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\include;
 SET PATH=C:\tools\cuda\bin;.
 ```
 #### 1f. ติดตั้ง Anaconda 3.7
-เข้าไปที่เว็บไซต์ [Anaconda](https://www.anaconda.com/distribution/) โดยเลือกเวอร์ชันที่ต้องการใช้ ทำการตั้งค่าให้ตรงกับภาพนี้
+เข้าไปที่เว็บไซต์ [Anaconda](https://www.anaconda.com/distribution/) โดยเลือกเวอร์ชันที่ต้องการใช้ โดยการทำ Object Detection ครั้งนี้ ได้ใช้ Anaconda เวอร์ชัน 3.7 จากนั้นตั้งค่าให้ตรงกับภาพนี้
 ![67a92acda91b3d9ea3a97d9525060cae.jpg](https://www.img.in.th/images/67a92acda91b3d9ea3a97d9525060cae.jpg)
 #### 1g. ติดตั้ง TensorRT 5.0 GA for Windows
 เข้าไปที่เว็บไซต์ [TensorRT](https://developer.nvidia.com/tensorrt) โดยเลือกเวอร์ชันที่ต้องการใช้ และทำการ Set Path ที่อยู่ของโปรแกรม TensorRT
@@ -72,7 +72,7 @@ SET PATH=C:\tools\cuda\bin;.
 เข้าไปที่เว็บไซต์ [Miniconda3](https://docs.conda.io/en/latest/miniconda.html) โดยเลือกเวอร์ชันที่ต้องการใช้ ทำการตั้งค่าให้ตรงกับภาพนี้
 ![87b212e455b1a03ea0d0adf1a79befc8.jpg](https://www.img.in.th/images/87b212e455b1a03ea0d0adf1a79befc8.jpg)
 #### 1i. ติดตั้ง Python 3.7.6
-เข้าไปที่เว็บไซต์ [Python](https://www.python.org/downloads/) โดยเลือกเวอร์ชันที่ต้องการใช้ ทำการตั้งค่าให้ตรงกับภาพนี้
+เข้าไปที่เว็บไซต์ [Python](https://www.python.org/downloads/) โดยเลือกเวอร์ชันที่ต้องการใช้ โดยการทำ Object Detection ครั้งนี้ ได้ใช้ Python เวอร์ชัน 3.7.6 จากนั้นตั้งค่าให้ตรงกับภาพนี้
 ![e330a2dcfde9aba39402ed300d867b5a.jpg](https://www.img.in.th/images/e330a2dcfde9aba39402ed300d867b5a.jpg)
 #### 1j. ติดตั้ง ติดตั้ง Jupyter
 เปิดใช้งานโปรแกรม Command Prompt ขึ้นมา พิมพ์คำสั่งดังนี้
@@ -128,7 +128,7 @@ C:\Users\Madi> Conda activate tensorflow
 สามารถเลือกโมเดลอย่างอื่นที่เราต้องการแทนได้ โดยไม่จำเป็นต้องใช้ Faster-RCNN-Inception-V2-COCO model เราสามารถเลือกใช้ให้ตรงกับจุดประสงค์ของเรา โดยสามารถเข้าไปดูได้ที่ [Tensorflow detection model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models) แล้วทำการเลือกโมเดลที่เราต้องการ
 
 หรือจะใช้ Faster-RCNN-Inception-V2-COCO model ก็ได้ โดยสามารถดาวน์โหลดได้โดยตรงจาก [Faster-RCNN](https://www.dropbox.com/s/nrp2xp3bk71zzje/faster_rcnn_inception_v2_coco_2018_01_28.tar.gz?dl=1) จากนั้นย้ายแฟ้มข้อมูล faster_rcnn_inception_v2_coco_2018_01_28 มาไว้ใน C:\tensorflow\models\research\object_detection
-#### 2c. ดาวน์โหลด model จาก Github
+# 2c. ดาวน์โหลด model จาก Github
 ทำการดาวน์โหลด model เพิ่มเติมจาก GitHub นี้ จากนั้นย้ายข้อมูลในแฟ้มข้อมูล [ของกิ๊ฟ] ลงใน object_detection เนื่องจากมีไฟล์ซ้ำ ให้แทนที่ไฟล์ในแฟ้มข้อมูล จากนั้นทำตามขั้นตอนนี้
 - ลบไฟล์ทุกไฟล์ในแฟ้มข้อมูล C:\tensorflow\models\research\object_detection\training
 - ลบไฟล์ทุกไฟล์ในแฟ้มข้อมูล C:\tensorflow\models\research\object_detection\inference_graph
