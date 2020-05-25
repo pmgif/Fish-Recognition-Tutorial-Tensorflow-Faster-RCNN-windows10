@@ -142,7 +142,7 @@ C:\Users\Madi> Conda activate tensorflow
   C:\tensorflow7\models\research\object_detection\images\train
 ***
 ### 3. เตรียมภาพ
-เราจะใช้โปรแกรม LabelImg เวอร์ชัน 1.6 ในส่วนของการตีกรอบภาพ สามารถดาวน์โหลดได้จาก [LabelImg](https://www.dropbox.com/s/fc1e9b3jyy9udkm/windows_v1.6.0.zip?dl=1)นี้
+เราจะใช้โปรแกรม LabelImg เวอร์ชัน 1.6 ในส่วนของการตีกรอบภาพ สามารถดาวน์โหลดได้จาก [LabelImg](https://www.dropbox.com/s/fc1e9b3jyy9udkm/windows_v1.6.0.zip?dl=1) นี้
 ![546fd110de02cb2d77b5d033fc888664.jpg](https://www.img.in.th/images/546fd110de02cb2d77b5d033fc888664.jpg)
 เมื่อเราทำการตีกรอบภาพเสร็จแล้ว โปรแกรม LabelImg จะบันทึกเป็นไฟล์ .xml
 ***
