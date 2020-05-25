@@ -65,6 +65,7 @@ SET PATH=C:\tools\cuda\bin;.
 ```
 #### 1f. ติดตั้ง Anaconda 3.7
 เข้าไปที่เว็บไซต์ [Anaconda](https://www.anaconda.com/distribution/) โดยเลือกเวอร์ชันที่ต้องการใช้ โดยการทำ Object Detection ครั้งนี้ ได้ใช้ Anaconda เวอร์ชัน 3.7 จากนั้นตั้งค่าให้ตรงกับภาพนี้
+
 ![67a92acda91b3d9ea3a97d9525060cae.jpg](https://www.img.in.th/images/67a92acda91b3d9ea3a97d9525060cae.jpg)
 #### 1g. ติดตั้ง TensorRT 5.0 GA for Windows
 เข้าไปที่เว็บไซต์ [TensorRT](https://developer.nvidia.com/tensorrt) โดยเลือกเวอร์ชันที่ต้องการใช้ และทำการ Set Path ที่อยู่ของโปรแกรม TensorRT
@@ -73,6 +74,7 @@ SET PATH=C:\tools\cuda\bin;.
 ![87b212e455b1a03ea0d0adf1a79befc8.jpg](https://www.img.in.th/images/87b212e455b1a03ea0d0adf1a79befc8.jpg)
 #### 1i. ติดตั้ง Python 3.7.6
 เข้าไปที่เว็บไซต์ [Python](https://www.python.org/downloads/) โดยเลือกเวอร์ชันที่ต้องการใช้ โดยการทำ Object Detection ครั้งนี้ ได้ใช้ Python เวอร์ชัน 3.7.6 จากนั้นตั้งค่าให้ตรงกับภาพนี้
+
 ![e330a2dcfde9aba39402ed300d867b5a.jpg](https://www.img.in.th/images/e330a2dcfde9aba39402ed300d867b5a.jpg)
 #### 1j. ติดตั้ง ติดตั้ง Jupyter
 เปิดใช้งานโปรแกรม Command Prompt ขึ้นมา พิมพ์คำสั่งดังนี้
