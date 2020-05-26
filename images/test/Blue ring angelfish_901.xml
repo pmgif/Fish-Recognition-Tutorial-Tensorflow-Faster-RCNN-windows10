@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Blue ring angelfish</folder>
+	<filename>Blue ring angelfish_901.jpg</filename>
+	<path>C:\Users\User\Desktop\image1000\Blue ring angelfish\Blue ring angelfish_901.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1067</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Blue ring angelfish</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>582</xmin>
+			<ymin>144</ymin>
+			<xmax>906</xmax>
+			<ymax>417</ymax>
+		</bndbox>
+	</object>
+</annotation>
