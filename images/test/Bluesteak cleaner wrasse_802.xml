@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Bluesteak cleaner wrasse</folder>
+	<filename>Bluesteak cleaner wrasse_802.jpg</filename>
+	<path>D:\new img\Bluesteak cleaner wrasse\Bluesteak cleaner wrasse_802.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1067</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Bluesteak cleaner wrasse</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>554</xmin>
+			<ymin>158</ymin>
+			<xmax>669</xmax>
+			<ymax>266</ymax>
+		</bndbox>
+	</object>
+</annotation>
