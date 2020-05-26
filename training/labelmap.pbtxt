@@ -1,0 +1,39 @@
+item {
+  id: 1
+  name: 'Pennant coralfish'
+}
+
+item {
+  id: 2
+  name: 'Moon wrasse'
+}
+
+item {
+  id: 3
+  name: 'Sapphire devil'
+}
+
+item {
+  id: 4
+  name: 'Black-backed butterflyfish'
+}
+
+item {
+  id: 5
+  name: 'Blue ring angelfish'
+}
+
+item {
+  id: 6
+  name: 'Threadfin butterflyfish'
+}
+
+item {
+  id: 7
+  name: 'Bluesteak cleaner wrasse'
+}
+
+item {
+  id: 8
+  name: 'Orangespine unicornfish'
+}
