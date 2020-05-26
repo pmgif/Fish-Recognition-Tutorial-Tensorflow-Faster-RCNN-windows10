@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Black-backed butterflyfish</folder>
+	<filename>Black-backed butterflyfish_802.JPG</filename>
+	<path>C:\Users\Mind\Desktop\FisfImgnew\Black-backed butterflyfish\Black-backed butterflyfish_802.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>800</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Black-backed butterflyfish</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>392</xmin>
+			<ymin>262</ymin>
+			<xmax>609</xmax>
+			<ymax>411</ymax>
+		</bndbox>
+	</object>
+</annotation>
