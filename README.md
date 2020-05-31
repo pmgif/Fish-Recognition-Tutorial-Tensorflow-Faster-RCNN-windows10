@@ -8,7 +8,7 @@
 
 This readme describes every step required to get going with your own object detection classifier: 
 1. [ติดตั้งโปรแกรม](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#1-ติดตั้งโปรแกรม)
-2. [ตั้งค่าTensorFlow Directory และ Anaconda](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#2-ตั้งค่าTensorFlow Directory-และ-Anaconda)
+2. [ตั้งค่า TensorFlowDirectory และ Anaconda](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#2-ตั้งค่า-TensorFlow-Directory-และ-Anaconda)
 3. [ตีกรอบภาพ](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#3-ตีกรอบภาพ)
 4. [ตั้งค่า Anaconda ใหม่](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#4-ตั้งค่า-Anaconda-ใหม่)
 5. [กำหนด PYTHONPATH](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#5-กำหนด-PYTHONPATH)
@@ -127,7 +127,7 @@ C:\Users\Madi> Conda activate tensorflow
  7. เปลี่ยนประเภทของ kernel จากเวอร์ชัน 3 เป็นเวอร์ชัน 3.7
  8. ประมวลผล code ดังกล่าว เพื่อเรียกใช้งาน GPU
 
-### 2. ตั้งค่าTensorFlow Directory และ Anaconda
+### 2. ตั้งค่า TensorFlow Directory และ Anaconda
 
 #### 2a. Download TensorFlow Object Detection API repository from GitHub
 สร้างโฟลเดอร์ไว้ที่ ไดร์ฟ C โดยตั้งชื่อว่า tensorflow จากนั้นทำการดาวน์โหลด full TensorFlow object detection จาก [Github](https://github.com/tensorflow/models) ทำการแตกไฟล์ และนำไฟล์มาไว้ในโฟลเดอร์ tensorflow จากนั้นทำการเปลี่ยนชื่อจาก “models-master” to just “models”.
