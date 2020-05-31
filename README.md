@@ -17,7 +17,7 @@ This readme describes every step required to get going with your own object dete
 8. [สร้าง Label Map](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-สร้าง-Label-Map)
 9. [ตั้งค่าแบบฝึกสอน(2)](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#9-ตั้งค่าแบบฝึกสอน(2))
 10. [ฝึกสอนแบบจำลอง](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#10-ฝึกสอนแบบจำลอง)
-11. [Export Inference Graph](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#11-Export Inference Graph)
+11. [Export Inference Graph](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#11-Export-Inference-Graph)
 12. [ทดสอบแบบจำลอง](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#12-ทดสอบแบบจำลอง)
 
 <p align="center">
