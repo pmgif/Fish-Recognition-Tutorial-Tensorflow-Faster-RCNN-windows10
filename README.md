@@ -43,7 +43,7 @@ This readme describes every step required to get going with your own object dete
 #### 1e. ติดตั้ง cuDNN 7.6.5
 เข้าเว็บไซต์ [cuDNN](https://developer.nvidia.com/cudnn) เลือกเวอร์ชันดังภาพ จากนั้นทำการ Set Path
 <p align="center">
-  <img src="doc/collage.jpg">
+  <img src="doc/cuDNN_version_7.6.5.jpg">
 </p>
 
 ```
@@ -54,9 +54,25 @@ SET PATH=C:\tools\cuda\bin;
 ```
 
 #### 1f. ติดตั้ง Anaconda 3.7
-เข้าเว็บไซต์ [Anaconda](https://www.anaconda.com/distribution/) ทำการดาวน์โหลดและติดตั้งโปรแกรม
+เข้าเว็บไซต์ [Anaconda](https://www.anaconda.com/distribution/) ทำการดาวน์โหลดและติดตั้งโปรแกรม จากนั้นทำการตั้งค่าดังรูปภาพ
+<p align="center">
+  <img src="doc/Anaconda_3.7_installation.jpg">
+</p>
 
+#### 1g. ติดตั้ง TensorRT 5.0 GA for Windows
+เข้าเว็บไซต์ [TensorRT](https://developer.nvidia.com/tensorrt) ทำการดาวน์โหลดและติดตั้งโปรแกรม จากนั้นทำการ Set ที่อยู่ Path
 
+#### 1h. ติดตั้ง Miniconda3 Python 3.7 for Windows 64-bit
+เข้าเว็บไซต์ [Miniconda3](https://docs.conda.io/en/latest/miniconda.html) ทำการดาวน์โหลดและติดตั้งโปรแกรม
+
+#### 1i. ติดตั้ง Python 3.7.6
+เข้าเว็บไซต์ [Python](https://www.python.org/downloads/) ทำการดาวน์โหลดและติดตั้งโปรแกรม จากนั้นทำการตั้งค่าดังรูปภาพ
+<p align="center">
+  <img src="doc/Python_installation.jpg">
+</p>
+
+#### 1j. ติดตั้ง Jupyter
+เข้าเว็บไซต์ [Visual Studio](https://visualstudio.microsoft.com/downloads/) ทำการดาวน์โหลดและติดตั้งโปรแกรม
 
 
 ### 2. Set up TensorFlow Directory and Anaconda Virtual Environment
