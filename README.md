@@ -37,8 +37,27 @@ This readme describes every step required to get going with your own object dete
 #### 1d. ติดตั้ง CUDA 10.0
 เข้าเว็บไซต์ [CUDA](https://developer.nvidia.com/cuda-10.0-download-archive) เลือกเวอร์ชันดังภาพ
 <p align="center">
-  <img src="doc/CUDA_version_10.0.jpg">
+  <img src="doc/cuDNN_version_7.6.5.jpg">
 </p>
+
+#### 1e. ติดตั้ง cuDNN 7.6.5
+เข้าเว็บไซต์ [cuDNN](https://developer.nvidia.com/cudnn) เลือกเวอร์ชันดังภาพ จากนั้นทำการ Set Path
+<p align="center">
+  <img src="doc/collage.jpg">
+</p>
+
+```
+SET PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin; 
+SET PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\extras\CUPTI\libx64; 
+SET PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\include; 
+SET PATH=C:\tools\cuda\bin;
+```
+
+#### 1f. ติดตั้ง Anaconda 3.7
+เข้าเว็บไซต์ [Anaconda](https://www.anaconda.com/distribution/) ทำการดาวน์โหลดและติดตั้งโปรแกรม
+
+
+
 
 ### 2. Set up TensorFlow Directory and Anaconda Virtual Environment
 The TensorFlow Object Detection API requires using the specific directory structure provided in its GitHub repository. It also requires several additional Python packages, specific additions to the PATH and PYTHONPATH variables, and a few extra setup commands to get everything set up to run or train an object detection model. 
