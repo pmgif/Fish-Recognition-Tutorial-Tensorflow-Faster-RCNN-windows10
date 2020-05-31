@@ -132,7 +132,7 @@ C:\Users\Madi> Conda activate tensorflow
 ดาวน์โหลด Tensorflw model ได้จาก [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md) ซึ่งมีหลายโมเดลให้เลือก แต่เราได้เลือกใช้ Faster-RCNN-Inception-V2 model ซึ่งสามารถดาวน์โหลดโดยตรงได้จาก [Faster R-CNN](https://www.dropbox.com/s/nrp2xp3bk71zzje/faster_rcnn_inception_v2_coco_2018_01_28.tar.gz?dl=1) จากนั้นทำการแตกไฟล์ แล้วนำไปใส่ไว้ใน C:\tensorflow\models\research\object_detection
 
 #### 2c. Download this tutorial's repository from GitHub
-ดาวน์โหลดตัว model เพิ่มเติมได้จาก repository นี้ จากนั้นนำไฟล์ไปไว้ที่โฟลเดอร์ C:\tensorflow\models\research\object_detection *เนื่องจากมีไฟล์ซ้ำ ให้ทำการซ้อนทับไฟล์เดิมไปได้เลย ดังภาพ*
+ดาวน์โหลดตัว model เพิ่มเติมได้จาก repository นี้ จากนั้นนำไฟล์ไปไว้ที่โฟลเดอร์ C:\tensorflow\models\research\object_detection *(เนื่องจากมีไฟล์ซ้ำ ให้ทำการซ้อนทับไฟล์เดิมไปได้เลย ดังภาพ)*
 
 <p align="center">
   <img src="doc/object_detection_directory.jpg">
@@ -160,195 +160,171 @@ Now that the TensorFlow Object Detection API is all set up and ready to go, we n
 </p>
 
 ### 4. Set up new Anaconda virtual environment
-Next, we'll work on setting up a virtual environment in Anaconda for tensorflow-gpu. From the Start menu in Windows, search for the Anaconda Prompt utility, right click on it, and click “Run as Administrator”. If Windows asks you if you would like to allow it to make changes to your computer, click Yes.
+เปิดโปรแกรม Anaconda Prompt โดยคลิกขวาเลือกเป็น “Run as Administrator”
 
-In the command terminal that pops up, create a new virtual environment called “tensorflow1” by issuing the following command:
+พิมพ์คำสั่งเพื่อสร้าง virtual environment ขึ้นมาใหม่ โดยตั้งชื่อว่า tensorflow พร้อมกับติดตั้ง python เวอร์ชัน 3.7
 ```
-C:\> conda create -n tensorflow1 pip python=3.5
+C:\> conda create -n tensorflow pip python=3.7
 ```
-Then, activate the environment and update pip by issuing:
+จากนั้น เปิดใช้งาน environment ด้วยคำสั่ง
 ```
-C:\> activate tensorflow1
-
-(tensorflow1) C:\>python -m pip install --upgrade pip
+C:\> activate tensorflow
 ```
-Install tensorflow-gpu in this environment by issuing:
+อัปเดทเวอร์ชันของ pip จากเวอร์ชัน pip 10.0.1 เป็นเวอร์ชันล่าสุด
 ```
-(tensorflow1) C:\> pip install --ignore-installed --upgrade tensorflow-gpu
+(tensorflow) C:\>python -m pip install --upgrade pip
 ```
-
-(Note: You can also use the CPU-only version of TensorFow, but it will run much slower. If you want to use the CPU-only version, just use "tensorflow" instead of "tensorflow-gpu" in the previous command.)
-
-Install the other necessary packages by issuing the following commands:
+ติดตั้ง tensorflow-gpu เวอร์ชัน 1.15 ด้วยคำสั่งดังนี้ *(เนื่องจากเวอร์ชัน tensorflow-gpu ที่ลงตอนติดตั้ง jupyter เป็นเวอร์ชัน 2.0.0 ไม่สามารถใช้ทดสอบได้ จึงเปลี่ยนเป็น tensorflow-gpu เวอร์ชัน 1.15 สามารถพิมพ์คำสั่งลงไปได้เลย เนื่องจากตัวโปรแกรมจะถอนการติดตั้ง tensorflow-gpu เวอร์ชัน 2.0.0 ให้อัตโนมัติ)*
 ```
-(tensorflow1) C:\> conda install -c anaconda protobuf
-(tensorflow1) C:\> pip install pillow
-(tensorflow1) C:\> pip install lxml
-(tensorflow1) C:\> pip install Cython
-(tensorflow1) C:\> pip install contextlib2
-(tensorflow1) C:\> pip install jupyter
-(tensorflow1) C:\> pip install matplotlib
-(tensorflow1) C:\> pip install pandas
-(tensorflow1) C:\> pip install opencv-python
+(tensorflow) C:\> pip install --ignore-installed --upgrade tensorflow-gpu==1.15
 ```
-(Note: The ‘pandas’ and ‘opencv-python’ packages are not needed by TensorFlow, but they are used in the Python scripts to generate TFRecords and to work with images, videos, and webcam feeds.)
-
-#### 2e. Configure PYTHONPATH environment variable
-A PYTHONPATH variable must be created that points to the \models, \models\research, and \models\research\slim directories. Do this by issuing the following commands (from any directory):
+ติดตั้งแพคเกจย่อยอื่น ๆ ด้วยคำสั่ง
 ```
-(tensorflow1) C:\> set PYTHONPATH=C:\tensorflow1\models;C:\tensorflow1\models\research;C:\tensorflow1\models\research\slim
-```
-(Note: Every time the "tensorflow1" virtual environment is exited, the PYTHONPATH variable is reset and needs to be set up again. You can use "echo %PYTHONPATH% to see if it has been set or not.)
-
-#### 2f. Compile Protobufs and run setup.py
-Next, compile the Protobuf files, which are used by TensorFlow to configure model and training parameters. Unfortunately, the short protoc compilation command posted on TensorFlow’s Object Detection API [installation page](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md) does not work on Windows. Every  .proto file in the \object_detection\protos directory must be called out individually by the command.
-
-In the Anaconda Command Prompt, change directories to the \models\research directory:
-```
-(tensorflow1) C:\> cd C:\tensorflow1\models\research
+(tensorflow) C:\> conda install -c anaconda protobuf
+(tensorflow) C:\> pip install pillow
+(tensorflow) C:\> pip install lxml
+(tensorflow) C:\> pip install Cython
+(tensorflow) C:\> pip install contextlib2
+(tensorflow) C:\> pip install jupyter
+(tensorflow) C:\> pip install matplotlib
+(tensorflow) C:\> pip install pandas
+(tensorflow) C:\> pip install opencv-python
 ```
 
-Then copy and paste the following command into the command line and press Enter:
+### 5. Configure PYTHONPATH environment variable
+กำหนด PYTHONPATH
+```
+(tensorflow) C:\> set PYTHONPATH=C:\tensorflow\models;C:\tensorflow\models\research;C:\tensorflow\models\research\slim
+```
+สามารถตรวจสอบ PYTHONPATH จากคำสั่ง
+```
+(tensorflow) C:\> echo %PYTHONPATH%
+```
+
+### 6. Compile Protobufs and run setup.py
+เปลี่ยน directories จากคำสั่ง
+```
+(tensorflow) C:\> cd C:\tensorflow\models\research
+```
+Tensorflow ใช้ Protobuf เพื่อกำหนดค่าแบบจำลองและพารามิเตอร์ของการฝึกสอนแบบจำลอง โดยสิ่งนี้จะสร้างไฟล์ name_pb2.py ไว้ในโฟลเดอร์ \ object_detection \ protos
 ```
 protoc --python_out=. .\object_detection\protos\anchor_generator.proto .\object_detection\protos\argmax_matcher.proto .\object_detection\protos\bipartite_matcher.proto .\object_detection\protos\box_coder.proto .\object_detection\protos\box_predictor.proto .\object_detection\protos\eval.proto .\object_detection\protos\faster_rcnn.proto .\object_detection\protos\faster_rcnn_box_coder.proto .\object_detection\protos\grid_anchor_generator.proto .\object_detection\protos\hyperparams.proto .\object_detection\protos\image_resizer.proto .\object_detection\protos\input_reader.proto .\object_detection\protos\losses.proto .\object_detection\protos\matcher.proto .\object_detection\protos\mean_stddev_box_coder.proto .\object_detection\protos\model.proto .\object_detection\protos\optimizer.proto .\object_detection\protos\pipeline.proto .\object_detection\protos\post_processing.proto .\object_detection\protos\preprocessor.proto .\object_detection\protos\region_similarity_calculator.proto .\object_detection\protos\square_box_coder.proto .\object_detection\protos\ssd.proto .\object_detection\protos\ssd_anchor_generator.proto .\object_detection\protos\string_int_label_map.proto .\object_detection\protos\train.proto .\object_detection\protos\keypoint_box_coder.proto .\object_detection\protos\multiscale_anchor_generator.proto .\object_detection\protos\graph_rewriter.proto .\object_detection\protos\calibration.proto .\object_detection\protos\flexible_grid_anchor_generator.proto
 ```
-This creates a name_pb2.py file from every name.proto file in the \object_detection\protos folder.
-
-**(Note: TensorFlow occassionally adds new .proto files to the \protos folder. If you get an error saying ImportError: cannot import name 'something_something_pb2' , you may need to update the protoc command to include the new .proto files.)**
-
-Finally, run the following commands from the C:\tensorflow1\models\research directory:
+คำสั่งการรวบรวมไฟล์ protoc แบบสั้นที่สำหรับการติดตั้ง Object Detection API ของ TensorFlow นั้น ไม่สามารถทำงานบน Windows ได้ ดังนั้นไฟล์ .proto ทุกไฟล์ในไดเร็กทอรี \ object_detection \ protos จึงต้องถูกเรียกใช้โดยคำสั่งทีละรายการ
 ```
-(tensorflow1) C:\tensorflow1\models\research> python setup.py build
-(tensorflow1) C:\tensorflow1\models\research> python setup.py install
+(tensorflow) C:\tensorflow\models\research> python setup.py build
+(tensorflow) C:\tensorflow\models\research> python setup.py install
 ```
 
-#### 2g. Test TensorFlow setup to verify it works
-The TensorFlow Object Detection API is now all set up to use pre-trained models for object detection, or to train a new one. You can test it out and verify your installation is working by launching the object_detection_tutorial.ipynb script with Jupyter. From the \object_detection directory, issue this command:
-```
-(tensorflow1) C:\tensorflow1\models\research\object_detection> jupyter notebook object_detection_tutorial.ipynb
-```
-This opens the script in your default web browser and allows you to step through the code one section at a time. You can step through each section by clicking the “Run” button in the upper toolbar. The section is done running when the “In [ * ]” text next to the section populates with a number (e.g. “In [1]”). 
-
-(Note: part of the script downloads the ssd_mobilenet_v1 model from GitHub, which is about 74MB. This means it will take some time to complete the section, so be patient.)
-
-Once you have stepped all the way through the script, you should see two labeled images at the bottom section the page. If you see this, then everything is working properly! If not, the bottom section will report any errors encountered. See the [Appendix](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#appendix-common-errors) for a list of errors I encountered while setting this up.
-
-**Note: If you run the full Jupyter Notebook without getting any errors, but the labeled pictures still don't appear, try this: go in to object_detection/utils/visualization_utils.py and comment out the import statements around lines 29 and 30 that include matplotlib. Then, try re-running the Jupyter notebook.**
-
-<p align="center">
-  <img src="doc/jupyter_notebook_dogs.jpg">
-</p>
-
-### 4. Generate Training Data
+### 7. Generate Training Data
 With the images labeled, it’s time to generate the TFRecords that serve as input data to the TensorFlow training model. This tutorial uses the xml_to_csv.py and generate_tfrecord.py scripts from [Dat Tran’s Raccoon Detector dataset](https://github.com/datitran/raccoon_dataset), with some slight modifications to work with our directory structure.
 
-First, the image .xml data will be used to create .csv files containing all the data for the train and test images. From the \object_detection folder, issue the following command in the Anaconda command prompt:
+เปลี่ยน directories จากคำสั่งดังนี้
 ```
-(tensorflow1) C:\tensorflow1\models\research\object_detection> python xml_to_csv.py
+(tensorflow) C:\tensorflow\models\research> cd object_detection
 ```
-This creates a train_labels.csv and test_labels.csv file in the \object_detection\images folder. 
-
-Next, open the generate_tfrecord.py file in a text editor. Replace the label map starting at line 31 with your own label map, where each object is assigned an ID number. This same number assignment will be used when configuring the labelmap.pbtxt file in Step 5b. 
-
-For example, say you are training a classifier to detect basketballs, shirts, and shoes. You will replace the following code in generate_tfrecord.py:
+นำไฟล์ข้อมูลภาพ .xml ที่มีข้อมูลทั้งหมดในแฟ้มข้อมูล train และ test ไปแปลงไฟล์เพื่อสร้างไฟล์ .csv
+```
+(tensorflow) C:\tensorflow\models\research\object_detection> python xml_to_csv.py
+```
+แก้ไขไฟล์ generate_tfrecord.py จากโฟลเดอร์ \object_detection เพื่อระบุ label map ของตัวรูปแบบจำลอง
 ```
 # TO-DO replace this with label map
 def class_text_to_int(row_label):
-    if row_label == 'nine':
+    if row_label == 'Pennant coralfish':
         return 1
-    elif row_label == 'ten':
+    elif row_label == 'Moon wrasse':
         return 2
-    elif row_label == 'jack':
+    elif row_label == 'Sapphire devil':
         return 3
-    elif row_label == 'queen':
+    elif row_label == 'Black-backed butterflyfish':
         return 4
-    elif row_label == 'king':
+    elif row_label == 'Blue ring angelfish':
         return 5
-    elif row_label == 'ace':
+    elif row_label == 'Threadfin butterflyfish':
         return 6
+    elif row_label == 'Bluesteak cleaner wrasse':
+        return 7
+    elif row_label == 'Orangespine unicornfish':
+        return 8
     else:
-        None
+        return 0
 ```
-With this:
+หรือจะเปลี่ยนตาม format ที่ให้ไว้ดังกล่าว เพื่อนำไปประยุกต์ใช้กับไฟล์ของตัวเอง
 ```
 # TO-DO replace this with label map
 def class_text_to_int(row_label):
-    if row_label == 'basketball':
+    if row_label == 'Name1':
         return 1
-    elif row_label == 'shirt':
+    elif row_label == 'Name2':
         return 2
-    elif row_label == 'shoe':
-        return 3
     else:
-        None
+        return 0
 ```
-Then, generate the TFRecord files by issuing these commands from the \object_detection folder:
+สร้างไฟล์ TFRecord ของ train.record และ test.record ใน \ object_detection เพื่อใช้ในการฝึกสอนแบบจำลองการตรวจจับวัตถุใหม่ โดยใช้คำสั่งดังนี้
 ```
 python generate_tfrecord.py --csv_input=images\train_labels.csv --image_dir=images\train --output_path=train.record
 python generate_tfrecord.py --csv_input=images\test_labels.csv --image_dir=images\test --output_path=test.record
 ```
-These generate a train.record and a test.record file in \object_detection. These will be used to train the new object detection classifier.
 
 ### 5. Create Label Map and Configure Training
-The last thing to do before training is to create a label map and edit the training configuration file.
-
-#### 5a. Label map
-The label map tells the trainer what each object is by defining a mapping of class names to class ID numbers. Use a text editor to create a new file and save it as labelmap.pbtxt in the C:\tensorflow1\models\research\object_detection\training folder. (Make sure the file type is .pbtxt, not .txt !) In the text editor, copy or type in the label map in the format below (the example below is the label map for my Pinochle Deck Card Detector):
+สร้างไฟล์ labelmap.pbtxt ลงในโฟลเดอร์ C: \ tensorflow7 \ models \ research \ object_detection \ training เพื่อกำหนดว่าแต่ละวัตถุคืออะไร โดยกำหนดชื่อคลาสและหมายเลข ID คลาส ให้ตรงกับชื่อคลาสและหมายเลข ID ของไฟล์ generate_tfrecord.py
 ```
 item {
   id: 1
-  name: 'nine'
+  name: 'Pennant coralfish'
 }
 
 item {
   id: 2
-  name: 'ten'
+  name: 'Moon wrasse'
 }
 
 item {
   id: 3
-  name: 'jack'
+  name: 'Sapphire devil'
 }
 
 item {
   id: 4
-  name: 'queen'
+  name: 'Black-backed butterflyfish'
 }
 
 item {
   id: 5
-  name: 'king'
+  name: 'Blue ring angelfish'
 }
 
 item {
   id: 6
-  name: 'ace'
+  name: 'Threadfin butterflyfish'
+}
+
+item {
+  id: 7
+  name: 'Bluesteak cleaner wrasse'
+}
+
+item {
+  id: 8
+  name: 'Orangespine unicornfish'
 }
 ```
-The label map ID numbers should be the same as what is defined in the generate_tfrecord.py file. For the basketball, shirt, and shoe detector example mentioned in Step 4, the labelmap.pbtxt file will look like:
+หรือจะเปลี่ยนตาม format ที่ให้ไว้ดังกล่าว เพื่อนำไปประยุกต์ใช้กับไฟล์ของตัวเอง
 ```
 item {
   id: 1
-  name: 'basketball'
+  name: 'Name1'
 }
 
 item {
   id: 2
-  name: 'shirt'
-}
-
-item {
-  id: 3
-  name: 'shoe'
+  name: 'Name2'
 }
 ```
 
 #### 5b. Configure training
-Finally, the object detection training pipeline must be configured. It defines which model and what parameters will be used for training. This is the last step before running training!
-
-Navigate to C:\tensorflow1\models\research\object_detection\samples\configs and copy the faster_rcnn_inception_v2_pets.config file into the \object_detection\training directory. Then, open the file with a text editor. There are several changes to make to the .config file, mainly changing the number of classes and examples, and adding the file paths to the training data.
-
-Make the following changes to the faster_rcnn_inception_v2_pets.config file. Note: The paths must be entered with single forward slashes (NOT backslashes), or TensorFlow will give a file path error when trying to train the model! Also, the paths must be in double quotation marks ( " ), not single quotation marks ( ' ).
+คัดลอกไฟล์ faster_rcnn_inception_v2_pets.config จาก C: \ tensorflow7 \ models \ research \ object_detection \ samples \ configs ไปยัง \ object_detection \ training จากนั้นเปิดไฟล์ด้วยโปรแกรม notepad++ และแก้ไข code ซึ่งมีการเปลี่ยนแปลงหลายอย่างในไฟล์ .config
 
 - Line 9. Change num_classes to the number of different objects you want the classifier to detect. For the above basketball, shirt, and shoe detector, it would be num_classes : 3 .
 - Line 106. Change fine_tune_checkpoint to:
