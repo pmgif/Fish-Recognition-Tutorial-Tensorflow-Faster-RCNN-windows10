@@ -17,7 +17,7 @@ This readme describes every step required to get going with your own object dete
 8. [Testing and using your newly trained object detection classifier](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-use-your-newly-trained-object-detection-classifier)
 
 <p align="center">
-  <img src="doc/detector1.jpg">
+  <img src="doc/collage.jpg">
 </p>
 
 ## ขั้นตอน
@@ -34,8 +34,11 @@ This readme describes every step required to get going with your own object dete
 #### 1c. ติดตั้ง Driver Graphics
 เข้าเว็บไซต์ [Driver Graphics](https://www.nvidia.com/Download/index.aspx?lang=th) เลือกเวอร์ชันไดร์เวอร์ให้ตรงกับ GPU ที่ใช้ และติดตั้งโปรแกรม
 
-#### 1d. ติดตั้ง Visual Studio
-เข้าเว็บไซต์ [Visual Studio](https://visualstudio.microsoft.com/downloads/) ทำการดาวน์โหลดและติดตั้งโปรแกรม
+#### 1d. ติดตั้ง CUDA 10.0
+เข้าเว็บไซต์ [CUDA](https://developer.nvidia.com/cuda-10.0-download-archive) เลือกเวอร์ชันดังภาพ
+<p align="center">
+  <img src="doc/CUDA_version_10.0.jpg">
+</p>
 
 ### 2. Set up TensorFlow Directory and Anaconda Virtual Environment
 The TensorFlow Object Detection API requires using the specific directory structure provided in its GitHub repository. It also requires several additional Python packages, specific additions to the PATH and PYTHONPATH variables, and a few extra setup commands to get everything set up to run or train an object detection model. 
