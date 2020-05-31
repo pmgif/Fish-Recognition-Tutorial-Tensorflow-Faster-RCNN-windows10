@@ -8,17 +8,17 @@
 
 This readme describes every step required to get going with your own object detection classifier: 
 1. [ติดตั้งโปรแกรม](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#1-ติดตั้งโปรแกรม)
-2. [ตั้งค่า TensorFlowDirectory และ Anaconda](https://github.com/pmgif/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#2-ตั้งค่า-TensorFlow-Directory-และ-Anaconda)
-3. [ตีกรอบภาพ](https://github.com/pmgif/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#3-ตีกรอบภาพ)
-4. [ตั้งค่า Anaconda ใหม่](https://github.com/pmgif/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#4-ตั้งค่า-Anaconda-ใหม่)
-5. [กำหนด PYTHONPATH](https://github.com/pmgif/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#5-กำหนด-PYTHONPATH)
-6. [ประมวลผล Protobufs และ setup.py](https://github.com/pmgif/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#6-ประมวลผล-Protobufs-และ-setup.py)
-7. [ตั้งค่าแบบฝึกสอน(1)](https://github.com/pmgif/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#7-ตั้งค่าแบบฝึกสอน(1))
-8. [สร้าง Label Map](https://github.com/pmgif/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-สร้าง-Label-Map)
-9. [ตั้งค่าแบบฝึกสอน(2)](https://github.com/pmgif/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#9-ตั้งค่าแบบฝึกสอน(2))
-10. [ฝึกสอนแบบจำลอง](https://github.com/pmgif/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#10-ฝึกสอนแบบจำลอง)
-11. [Export Inference Graph](https://github.com/pmgif/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#11-Export-Inference-Graph)
-12. [ทดสอบแบบจำลอง](https://github.com/pmgif/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#12-ทดสอบแบบจำลอง)
+2. [ตั้งค่า TensorFlow Directory และ Anaconda](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#2-ตั้งค่า-TensorFlow-Directory-และ-Anaconda)
+3. [ตีกรอบภาพ](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#3-ตีกรอบภาพ)
+4. [ตั้งค่า Anaconda ใหม่](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#4-ตั้งค่า-Anaconda-ใหม่)
+5. [กำหนด PYTHONPATH](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#5-กำหนด-PYTHONPATH)
+6. [ประมวลผล Protobufs และ setup.py](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#6-ประมวลผล-Protobufs-และ-setup.py)
+7. [ตั้งค่าแบบฝึกสอน(1)](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#7-ตั้งค่าแบบฝึกสอน(1))
+8. [สร้าง Label Map](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#8-สร้าง-Label-Map)
+9. [ตั้งค่าแบบฝึกสอน(2)](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#9-ตั้งค่าแบบฝึกสอน(2))
+10. [ฝึกสอนแบบจำลอง](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#10-ฝึกสอนแบบจำลอง)
+11. [Export Inference Graph](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#11-Export-Inference-Graph)
+12. [ทดสอบแบบจำลอง](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#12-ทดสอบแบบจำลอง)
 
 <p align="center">
   <img src="doc/collage.jpg">
