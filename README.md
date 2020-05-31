@@ -7,7 +7,7 @@
 [![Link to my YouTube video!](https://raw.githubusercontent.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10/master/doc/YouTube%20video.jpg)](https://www.youtube.com/watch?v=Rgpfk6eYxJA)
 
 This readme describes every step required to get going with your own object detection classifier: 
-1. [Installing Anaconda, CUDA, and cuDNN](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#1-install-anaconda-cuda-and-cudnn)
+1. [ติดตั้งโปรแกรม](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#1-install-anaconda-cuda-and-cudnn)
 2. [Setting up the Object Detection directory structure and Anaconda Virtual Environment](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#2-set-up-tensorflow-directory-and-anaconda-virtual-environment)
 3. [Gathering and labeling pictures](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#3-gather-and-label-pictures)
 4. [Generating training data](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#4-generate-training-data)
@@ -72,8 +72,56 @@ SET PATH=C:\tools\cuda\bin;
 </p>
 
 #### 1j. ติดตั้ง Jupyter
-เข้าเว็บไซต์ [Visual Studio](https://visualstudio.microsoft.com/downloads/) ทำการดาวน์โหลดและติดตั้งโปรแกรม
+เปิดใช้งานโปรแกรม Command Prompt และพิมพ์คำสั่ง
+```
+C:\Users\Madi> conda install jupyter
+```
 
+#### 1k. ประมวลผล Setup Script
+ 1. ค้นหาที่อยู่ของไฟล์ .yml
+```
+C:\Users\Madi> dir *.yml
+```
+ 2. สร้าง Environment ของ tensorflow.yml โดยใช้ conda ในการสร้าง
+```
+C:\Users\Madi> conda env create -v -f tensorflow.yml
+```
+
+#### 1l. ติดตั้ง Jupyter Kernel
+ 1. เปิดใช้งาน environment tensorflow โดยใช้ conda ด้วยคำสั่ง
+```
+C:\Users\Madi> Conda activate tensorflow
+```
+ 2. ติดตั้ง Jupyter Kernel ของ python เวอร์ชัน 3.7 ด้วยคำสั่ง
+```
+(tensorflow) C:\Users\Madi> python -m ipykernel install --user --name tensorflow --display-name "Python 3.7 (tensorflow)"
+```
+ 3. ทดลองเขียน python เพื่อทดสอบการใช้งานของ tensorflow
+```
+(tensorflow) C:\Users\Madi> python
+```
+ 4. พิมพ์คำสั่ง python ทีละคำสั่ง
+```
+>>> import tensorflow as tf
+>>> print(tf.__version__)
+>>> quit()
+```
+
+#### 1m. ทดสอบการทำงานของ Tensorflow
+ 1. เข้าไปที่ [เว็บไซต์](https://github.com/jeffheaton/t81_558_deep_learning) ทำการดาวน์โหลดไฟล์ทั้งหมด
+ 2. แตกไฟล์ t81_558_deep_learning-master
+ 3. เปลี่ยน directory เพื่อเข้าไปใน directory t81_558_deep_learning-master
+```
+(tensorflow) C:\Users\Madi> cd t81_558_deep_learning-master
+```
+ 4. เรียกใช้ jupyter notebook
+```
+(tensorflow) C:\Users\Madi\t81_558_deep_learning-master> jupyter notebook
+```
+ 5. เลือกเปิดไฟล์ โดยใช้บราวเซอร์ชนิดใดก็ได้
+ 6. เลือกไฟล์ t81_558_class_01_1_overview.ipynb
+ 7. เปลี่ยนประเภทของ kernel จากเวอร์ชัน 3 เป็นเวอร์ชัน 3.7
+ 8. ประมวลผล code ดังกล่าว เพื่อเรียกใช้งาน GPU
 
 ### 2. Set up TensorFlow Directory and Anaconda Virtual Environment
 The TensorFlow Object Detection API requires using the specific directory structure provided in its GitHub repository. It also requires several additional Python packages, specific additions to the PATH and PYTHONPATH variables, and a few extra setup commands to get everything set up to run or train an object detection model. 
