@@ -8,13 +8,17 @@
 
 This readme describes every step required to get going with your own object detection classifier: 
 1. [ติดตั้งโปรแกรม](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#1-install-anaconda-cuda-and-cudnn)
-2. [Setting up the Object Detection directory structure and Anaconda Virtual Environment](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#2-set-up-tensorflow-directory-and-anaconda-virtual-environment)
-3. [Gathering and labeling pictures](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#3-gather-and-label-pictures)
-4. [Generating training data](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#4-generate-training-data)
-5. [Creating a label map and configuring training](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#5-create-label-map-and-configure-training)
-6. [Training](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#6-run-the-training)
-7. [Exporting the inference graph](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#7-export-inference-graph)
-8. [Testing and using your newly trained object detection classifier](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-use-your-newly-trained-object-detection-classifier)
+2. [ตั้งค่าTensorFlow Directory และ Anaconda](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#2-set-up-tensorflow-directory-and-anaconda-virtual-environment)
+3. [ตีกรอบภาพ](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#3-gather-and-label-pictures)
+4. [ตั้งค่า Anaconda ใหม่](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#4-generate-training-data)
+5. [กำหนด PYTHONPATH](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#5-create-label-map-and-configure-training)
+6. [ประมวลผล Protobufs และ setup.py](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#6-run-the-training)
+7. [ตั้งค่าแบบฝึกสอน(1)](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#7-export-inference-graph)
+8. [สร้าง Label Map](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-use-your-newly-trained-object-detection-classifier)
+9. [ตั้งค่าแบบฝึกสอน(2)](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-use-your-newly-trained-object-detection-classifier)
+10. [ฝึกสอนแบบจำลอง](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-use-your-newly-trained-object-detection-classifier)
+11. [Export Inference Graph](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-use-your-newly-trained-object-detection-classifier)
+12. [ทดสอบแบบจำลอง](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-use-your-newly-trained-object-detection-classifier)
 
 <p align="center">
   <img src="doc/collage.jpg">
@@ -123,7 +127,7 @@ C:\Users\Madi> Conda activate tensorflow
  7. เปลี่ยนประเภทของ kernel จากเวอร์ชัน 3 เป็นเวอร์ชัน 3.7
  8. ประมวลผล code ดังกล่าว เพื่อเรียกใช้งาน GPU
 
-### 2. Set up TensorFlow Directory and Anaconda Virtual Environment
+### 2. ตั้งค่าTensorFlow Directory และ Anaconda
 
 #### 2a. Download TensorFlow Object Detection API repository from GitHub
 สร้างโฟลเดอร์ไว้ที่ ไดร์ฟ C โดยตั้งชื่อว่า tensorflow จากนั้นทำการดาวน์โหลด full TensorFlow object detection จาก [Github](https://github.com/tensorflow/models) ทำการแตกไฟล์ และนำไฟล์มาไว้ในโฟลเดอร์ tensorflow จากนั้นทำการเปลี่ยนชื่อจาก “models-master” to just “models”.
@@ -146,10 +150,7 @@ You can also download the frozen inference graph for my trained Pinochle Deck ca
 - ลบไฟล์ “test_labels.csv” และ “train_labels.csv” จาก \object_detection\images
 - หากต้องการใช้ภาพของตนเองในการทดสอบ ให้ทำการลบทุกไฟล์ในโฟลเดอร์ \object_detection\images\train และ \object_detection\images\test
 
-### 3. Gather and Label Pictures
-Now that the TensorFlow Object Detection API is all set up and ready to go, we need to provide the images it will use to train a new detection classifier.
-
-#### 3a. Gather Pictures
+### 3.ตีกรอบภาพ
 
 ทำการตีกรอบภาพ เพื่อให้ได้ไฟล์ .xml โดยเราจะใช้โปรแกรม LabelImg ซึ่งสามารถศึกษาโปรแกรมเพิ่มเติมได้จาก [LabelImg GitHub link](https://github.com/tzutalin/labelImg) หรือจะดาวน์โหลดโดยตรงได้จาก [LabelImg download link](https://www.dropbox.com/sh/sryfvbr43efumr5/AAD3Af7D7cgUePbTh6E_ppPga?dl=1) โดยเราจะใช้เวอร์ชัน 1.6
 
@@ -159,7 +160,7 @@ Now that the TensorFlow Object Detection API is all set up and ready to go, we n
   <img src="doc/labels.jpg">
 </p>
 
-### 4. Set up new Anaconda virtual environment
+### 4. ตั้งค่า Anaconda ใหม่
 เปิดโปรแกรม Anaconda Prompt โดยคลิกขวาเลือกเป็น “Run as Administrator”
 
 พิมพ์คำสั่งเพื่อสร้าง virtual environment ขึ้นมาใหม่ โดยตั้งชื่อว่า tensorflow พร้อมกับติดตั้ง python เวอร์ชัน 3.7
@@ -191,7 +192,7 @@ C:\> activate tensorflow
 (tensorflow) C:\> pip install opencv-python
 ```
 
-### 5. Configure PYTHONPATH environment variable
+### 5. กำหนด PYTHONPATH
 กำหนด PYTHONPATH
 ```
 (tensorflow) C:\> set PYTHONPATH=C:\tensorflow\models;C:\tensorflow\models\research;C:\tensorflow\models\research\slim
@@ -201,7 +202,7 @@ C:\> activate tensorflow
 (tensorflow) C:\> echo %PYTHONPATH%
 ```
 
-### 6. Compile Protobufs and run setup.py
+### 6. ประมวลผล Protobufs และ setup.py
 เปลี่ยน directories จากคำสั่ง
 ```
 (tensorflow) C:\> cd C:\tensorflow\models\research
@@ -216,7 +217,7 @@ protoc --python_out=. .\object_detection\protos\anchor_generator.proto .\object_
 (tensorflow) C:\tensorflow\models\research> python setup.py install
 ```
 
-### 7. Generate Training Data
+### 7. ตั้งค่าแบบฝึกสอน(1)
 With the images labeled, it’s time to generate the TFRecords that serve as input data to the TensorFlow training model. This tutorial uses the xml_to_csv.py and generate_tfrecord.py scripts from [Dat Tran’s Raccoon Detector dataset](https://github.com/datitran/raccoon_dataset), with some slight modifications to work with our directory structure.
 
 เปลี่ยน directories จากคำสั่งดังนี้
@@ -267,7 +268,7 @@ python generate_tfrecord.py --csv_input=images\train_labels.csv --image_dir=imag
 python generate_tfrecord.py --csv_input=images\test_labels.csv --image_dir=images\test --output_path=test.record
 ```
 
-### 5. Create Label Map and Configure Training
+### 8. สร้าง Label Map
 สร้างไฟล์ labelmap.pbtxt ลงในโฟลเดอร์ C: \ tensorflow7 \ models \ research \ object_detection \ training เพื่อกำหนดว่าแต่ละวัตถุคืออะไร โดยกำหนดชื่อคลาสและหมายเลข ID คลาส ให้ตรงกับชื่อคลาสและหมายเลข ID ของไฟล์ generate_tfrecord.py
 ```
 item {
@@ -323,7 +324,7 @@ item {
 }
 ```
 
-#### 5b. Configure training
+### 9. ตั้งค่าแบบฝึกสอน(2)
 คัดลอกไฟล์ faster_rcnn_inception_v2_pets.config จาก C: \ tensorflow7 \ models \ research \ object_detection \ samples \ configs ไปยัง \ object_detection \ training จากนั้นเปิดไฟล์ด้วยโปรแกรม notepad++ และแก้ไข code ซึ่งมีการเปลี่ยนแปลงหลายอย่างในไฟล์ .config
 
 - บรรทัดที่ 9 เปลี่ยน num_classes (จำนวนของวัตถุต่าง ๆ ที่ต้องการให้ตัวแยกประเภทตรวจจับ) ในการฝึกสอนแบบจำลองมีจำนวนปลาที่ถูกนำมาฝึกสอนแบบจำลองทั้งหมด 8 สายพันธ์ุ
@@ -359,7 +360,7 @@ label_map_path: "C:/tensorflow1/models/research/object_detection/training/labelm
 
 จากนั้นทำการบันทึกไฟล์ที่ทำการแก้ไขข้อมูล
 
-### 6. Run the Training
+### 10. ฝึกสอนแบบจำลอง
 ย้ายไฟล์ train.py ที่อยู่ในแฟ้มข้อมูล / object_detection / legacy ไปที่แฟ้มข้อมูล / object_detection
 
 พิมพ์คำสั่งเพื่อฝึกสอนแบบจำลอง
@@ -386,13 +387,13 @@ TensorFlow จะเริ่มต้นการฝึกสอนแบบจ
   <img src="doc/train_finish.jpg">
 </p>
 
-### 7. Export Inference Graph
+### 11. Export Inference Graph
 สร้างไฟล์แบบจำลอง (ไฟล์ .pb) จากโฟลเดอร์ \ object_detection โดยที่ “model.ckpt-XXXX” คือหมายเลขสูงสุดของไฟล์ .ckpt ในโฟลเดอร์ \ training
 ```
 python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/faster_rcnn_inception_v2_pets.config --trained_checkpoint_prefix training/model.ckpt-XXXX --output_directory inference_graph
 ```
 
-### 8. Test Model
+### 12. ทดสอบแบบจำลอง
 เรียกใช้สคริปต์โดยพิมพ์ลงในพรอมต์คำสั่งของ Anaconda (เมื่อเปิดใช้งาน environment “tensorflow7”) แล้วกด ENTER ซึ่งคำสั่งนี้จะเป็นการเปิด python shell เพื่อเรียกใช้งานสคริปต์ต่าง ๆ
 ```
 (tensorflow) C:\tensorflow\models\research\object_detection> idle
