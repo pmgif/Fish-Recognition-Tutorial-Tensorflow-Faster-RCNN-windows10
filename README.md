@@ -378,12 +378,12 @@ TensorFlow จะเริ่มต้นการฝึกสอนแบบจ
 โดย code ดังกล่าวจะสร้างเว็บเพจบนเครื่องคอมพิวเตอร์ YourPCName: 6006 สามารถดูได้ผ่านเว็บเบราว์เซอร์ หน้า TensorBoard จะให้ข้อมูลและกราฟที่แสดงว่าการฝึกสอนแบบจำลองมีความก้าวหน้าอย่างไร โดยกราฟนี้จะแสดงค่า loss ที่แสดงค่าความแม่นยำของแต่ละภาพในการฝึกสอนแบบจำลอง โดยแกน x หมายถึง ค่า Num Step (รอบการทำงาน) แกน y หมายถึง ค่า loss
 
 <p align="center">
-  <img src="doc/loss_graph.JPG">
+  <img src="doc/loss_graph.jpg">
 </p>
 
 เมื่อการฝึกสอนแบบจำลองเสร็จสิ้น จะแสดงข้อความ “Finished training! Saving model to disk.” ดังภาพ
 <p align="center">
-  <img src="doc/train_finish.JPG">
+  <img src="doc/train_finish.jpg">
 </p>
 
 ### 7. Export Inference Graph
