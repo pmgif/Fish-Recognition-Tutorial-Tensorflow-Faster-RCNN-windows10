@@ -124,65 +124,42 @@ C:\Users\Madi> Conda activate tensorflow
  8. ประมวลผล code ดังกล่าว เพื่อเรียกใช้งาน GPU
 
 ### 2. Set up TensorFlow Directory and Anaconda Virtual Environment
-The TensorFlow Object Detection API requires using the specific directory structure provided in its GitHub repository. It also requires several additional Python packages, specific additions to the PATH and PYTHONPATH variables, and a few extra setup commands to get everything set up to run or train an object detection model. 
-
-This portion of the tutorial goes over the full set up required. It is fairly meticulous, but follow the instructions closely, because improper setup can cause unwieldy errors down the road.
 
 #### 2a. Download TensorFlow Object Detection API repository from GitHub
 สร้างโฟลเดอร์ไว้ที่ ไดร์ฟ C โดยตั้งชื่อว่า tensorflow จากนั้นทำการดาวน์โหลด full TensorFlow object detection จาก [Github](https://github.com/tensorflow/models) ทำการแตกไฟล์ และนำไฟล์มาไว้ในโฟลเดอร์ tensorflow จากนั้นทำการเปลี่ยนชื่อจาก “models-master” to just “models”.
 
-**Note: The TensorFlow models repository's code (which contains the object detection API) is continuously updated by the developers. Sometimes they make changes that break functionality with old versions of TensorFlow. It is always best to use the latest version of TensorFlow and download the latest models repository. If you are not using the latest version, clone or download the commit for the version you are using as listed in the table below.**
-
- If you are using an older version of TensorFlow, here is a table showing which GitHub commit of the repository you should use. I generated this by going to the release branches for the models repository and getting the commit before the last commit for the branch. (They remove the research folder as the last commit before they create the official version release.)
-
-| TensorFlow version | GitHub Models Repository Commit |
-|--------------------|---------------------------------|
-|TF v1.7             |https://github.com/tensorflow/models/tree/adfd5a3aca41638aa9fb297c5095f33d64446d8f |
-|TF v1.8             |https://github.com/tensorflow/models/tree/abd504235f3c2eed891571d62f0a424e54a2dabc |
-|TF v1.9             |https://github.com/tensorflow/models/tree/d530ac540b0103caa194b4824af353f1b073553b |
-|TF v1.10            |https://github.com/tensorflow/models/tree/b07b494e3514553633b132178b4c448f994d59df |
-|TF v1.11            |https://github.com/tensorflow/models/tree/23b5b4227dfa1b23d7c21f0dfaf0951b16671f43 |
-|TF v1.12            |https://github.com/tensorflow/models/tree/r1.12.0 |
-|TF v1.13            |https://github.com/tensorflow/models/tree/r1.13.0 |
-|Latest version      |https://github.com/tensorflow/models |
-
-This tutorial was originally done using TensorFlow v1.5 and this [GitHub commit](https://github.com/tensorflow/models/tree/079d67d9a0b3407e8d074a200780f3835413ef99) of the TensorFlow Object Detection API. If portions of this tutorial do not work, it may be necessary to install TensorFlow v1.5 and use this exact commit rather than the most up-to-date version.
-
 #### 2b. Download the Faster-RCNN-Inception-V2-COCO model from TensorFlow's model zoo
-TensorFlow provides several object detection models (pre-trained classifiers with specific neural network architectures) in its [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md). Some models (such as the SSD-MobileNet model) have an architecture that allows for faster detection but with less accuracy, while some models (such as the Faster-RCNN model) give slower detection but with more accuracy. I initially started with the SSD-MobileNet-V1 model, but it didn’t do a very good job identifying the cards in my images. I re-trained my detector on the Faster-RCNN-Inception-V2 model, and the detection worked considerably better, but with a noticeably slower speed.
-
-<p align="center">
-  <img src="doc/rcnn_vs_ssd.jpg">
-</p>
-
-You can choose which model to train your objection detection classifier on. If you are planning on using the object detector on a device with low computational power (such as a smart phone or Raspberry Pi), use the SDD-MobileNet model. If you will be running your detector on a decently powered laptop or desktop PC, use one of the RCNN models. 
-
-This tutorial will use the Faster-RCNN-Inception-V2 model. [Download the model here.](http://download.tensorflow.org/models/object_detection/faster_rcnn_inception_v2_coco_2018_01_28.tar.gz) Open the downloaded faster_rcnn_inception_v2_coco_2018_01_28.tar.gz file with a file archiver such as WinZip or 7-Zip and extract the faster_rcnn_inception_v2_coco_2018_01_28 folder to the C:\tensorflow1\models\research\object_detection folder. (Note: The model date and version will likely change in the future, but it should still work with this tutorial.)
+ดาวน์โหลด Tensorflw model ได้จาก [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md) ซึ่งมีหลายโมเดลให้เลือก แต่เราได้เลือกใช้ Faster-RCNN-Inception-V2 model ซึ่งสามารถดาวน์โหลดโดยตรงได้จาก [Faster R-CNN](https://www.dropbox.com/s/nrp2xp3bk71zzje/faster_rcnn_inception_v2_coco_2018_01_28.tar.gz?dl=1) จากนั้นทำการแตกไฟล์ แล้วนำไปใส่ไว้ใน C:\tensorflow\models\research\object_detection
 
 #### 2c. Download this tutorial's repository from GitHub
-Download the full repository located on this page (scroll to the top and click Clone or Download) and extract all the contents directly into the C:\tensorflow1\models\research\object_detection directory. (You can overwrite the existing "README.md" file.) This establishes a specific directory structure that will be used for the rest of the tutorial. 
-
-At this point, here is what your \object_detection folder should look like:
+ดาวน์โหลดตัว model เพิ่มเติมได้จาก repository นี้ จากนั้นนำไฟล์ไปไว้ที่โฟลเดอร์ C:\tensorflow\models\research\object_detection *เนื่องจากมีไฟล์ซ้ำ ให้ทำการซ้อนทับไฟล์เดิมไปได้เลย ดังภาพ*
 
 <p align="center">
   <img src="doc/object_detection_directory.jpg">
 </p>
 
-This repository contains the images, annotation data, .csv files, and TFRecords needed to train a "Pinochle Deck" playing card detector. You can use these images and data to practice making your own Pinochle Card Detector. It also contains Python scripts that are used to generate the training data. It has scripts to test out the object detection classifier on images, videos, or a webcam feed. You can ignore the \doc folder and its files; they are just there to hold the images used for this readme.
-
-If you want to practice training your own "Pinochle Deck" card detector, you can leave all the files as they are. You can follow along with this tutorial to see how each of the files were generated, and then run the training. You will still need to generate the TFRecord files (train.record and test.record) as described in Step 4. 
-
 You can also download the frozen inference graph for my trained Pinochle Deck card detector [from this Dropbox link](https://www.dropbox.com/s/va9ob6wcucusse1/inference_graph.zip?dl=0) and extract the contents to \object_detection\inference_graph. This inference graph will work "out of the box". You can test it after all the setup instructions in Step 2a - 2f have been completed by running the Object_detection_image.py (or video or webcam) script.
 
-If you want to train your own object detector, delete the following files (do not delete the folders):
-- All files in \object_detection\images\train and \object_detection\images\test
-- The “test_labels.csv” and “train_labels.csv” files in \object_detection\images
-- All files in \object_detection\training
--	All files in \object_detection\inference_graph
+จากนั้นทำตามขั้นตอนย่อยต่อไปนี้ (ห้ามลบโฟลเดอร์ดังกล่าว):
+- ลบทุกไฟล์จากโฟลเดอร์ \object_detection\training
+-	ลบทุกไฟล์จากโฟลเดอร์ \object_detection\inference_graph
+- ลบไฟล์ “test_labels.csv” และ “train_labels.csv” จาก \object_detection\images
+- หากต้องการใช้ภาพของตนเองในการทดสอบ ให้ทำการลบทุกไฟล์ในโฟลเดอร์ \object_detection\images\train และ \object_detection\images\test
 
-Now, you are ready to start from scratch in training your own object detector. This tutorial will assume that all the files listed above were deleted, and will go on to explain how to generate the files for your own training dataset.
+### 3. Gather and Label Pictures
+Now that the TensorFlow Object Detection API is all set up and ready to go, we need to provide the images it will use to train a new detection classifier.
 
-#### 2d. Set up new Anaconda virtual environment
+#### 3a. Gather Pictures
+
+ทำการตีกรอบภาพ เพื่อให้ได้ไฟล์ .xml โดยเราจะใช้โปรแกรม LabelImg ซึ่งสามารถศึกษาโปรแกรมเพิ่มเติมได้จาก [LabelImg GitHub link](https://github.com/tzutalin/labelImg) หรือจะดาวน์โหลดโดยตรงได้จาก [LabelImg download link](https://www.dropbox.com/sh/sryfvbr43efumr5/AAD3Af7D7cgUePbTh6E_ppPga?dl=1) โดยเราจะใช้เวอร์ชัน 1.6
+
+จากนั้นทำการตีกรอบภาพ ดังรูปภาพ
+
+<p align="center">
+  <img src="doc/labels.jpg">
+</p>
+
+### 4. Set up new Anaconda virtual environment
 Next, we'll work on setting up a virtual environment in Anaconda for tensorflow-gpu. From the Start menu in Windows, search for the Anaconda Prompt utility, right click on it, and click “Run as Administrator”. If Windows asks you if you would like to allow it to make changes to your computer, click Yes.
 
 In the command terminal that pops up, create a new virtual environment called “tensorflow1” by issuing the following command:
@@ -261,39 +238,6 @@ Once you have stepped all the way through the script, you should see two labeled
 <p align="center">
   <img src="doc/jupyter_notebook_dogs.jpg">
 </p>
-
-### 3. Gather and Label Pictures
-Now that the TensorFlow Object Detection API is all set up and ready to go, we need to provide the images it will use to train a new detection classifier.
-
-#### 3a. Gather Pictures
-TensorFlow needs hundreds of images of an object to train a good detection classifier. To train a robust classifier, the training images should have random objects in the image along with the desired objects, and should have a variety of backgrounds and lighting conditions. There should be some images where the desired object is partially obscured, overlapped with something else, or only halfway in the picture. 
-
-For my Pinochle Card Detection classifier, I have six different objects I want to detect (the card ranks nine, ten, jack, queen, king, and ace – I am not trying to detect suit, just rank). I used my iPhone to take about 40 pictures of each card on its own, with various other non-desired objects in the pictures. Then, I took about another 100 pictures with multiple cards in the picture. I know I want to be able to detect the cards when they’re overlapping, so I made sure to have the cards be overlapped in many images.
-
-<p align="center">
-  <img src="doc/collage.jpg">
-</p>
-
-You can use your phone to take pictures of the objects or download images of the objects from Google Image Search. I recommend having at least 200 pictures overall. I used 311 pictures to train my card detector.
-
-Make sure the images aren’t too large. They should be less than 200KB each, and their resolution shouldn’t be more than 720x1280. The larger the images are, the longer it will take to train the classifier. You can use the resizer.py script in this repository to reduce the size of the images.
-
-After you have all the pictures you need, move 20% of them to the \object_detection\images\test directory, and 80% of them to the \object_detection\images\train directory. Make sure there are a variety of pictures in both the \test and \train directories.
-
-#### 3b. Label Pictures
-Here comes the fun part! With all the pictures gathered, it’s time to label the desired objects in every picture. LabelImg is a great tool for labeling images, and its GitHub page has very clear instructions on how to install and use it.
-
-[LabelImg GitHub link](https://github.com/tzutalin/labelImg)
-
-[LabelImg download link](https://www.dropbox.com/s/tq7zfrcwl44vxan/windows_v1.6.0.zip?dl=1)
-
-Download and install LabelImg, point it to your \images\train directory, and then draw a box around each object in each image. Repeat the process for all the images in the \images\test directory. This will take a while! 
-
-<p align="center">
-  <img src="doc/labels.jpg">
-</p>
-
-LabelImg saves a .xml file containing the label data for each image. These .xml files will be used to generate TFRecords, which are one of the inputs to the TensorFlow trainer. Once you have labeled and saved each image, there will be one .xml file for each image in the \test and \train directories.
 
 ### 4. Generate Training Data
 With the images labeled, it’s time to generate the TFRecords that serve as input data to the TensorFlow training model. This tutorial uses the xml_to_csv.py and generate_tfrecord.py scripts from [Dat Tran’s Raccoon Detector dataset](https://github.com/datitran/raccoon_dataset), with some slight modifications to work with our directory structure.
