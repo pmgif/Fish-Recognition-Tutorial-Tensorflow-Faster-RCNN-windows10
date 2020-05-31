@@ -8,17 +8,17 @@
 
 This readme describes every step required to get going with your own object detection classifier: 
 1. [ติดตั้งโปรแกรม](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#1-ติดตั้งโปรแกรม)
-2. [ตั้งค่าTensorFlow Directory และ Anaconda](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#2-ตั้งค่าTensorFlow Directory และ Anaconda)
-3. [ตีกรอบภาพ](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#3-gather-and-label-pictures)
-4. [ตั้งค่า Anaconda ใหม่](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#4-generate-training-data)
-5. [กำหนด PYTHONPATH](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#5-create-label-map-and-configure-training)
-6. [ประมวลผล Protobufs และ setup.py](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#6-run-the-training)
-7. [ตั้งค่าแบบฝึกสอน(1)](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#7-export-inference-graph)
-8. [สร้าง Label Map](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-use-your-newly-trained-object-detection-classifier)
-9. [ตั้งค่าแบบฝึกสอน(2)](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-use-your-newly-trained-object-detection-classifier)
-10. [ฝึกสอนแบบจำลอง](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-use-your-newly-trained-object-detection-classifier)
-11. [Export Inference Graph](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-use-your-newly-trained-object-detection-classifier)
-12. [ทดสอบแบบจำลอง](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-use-your-newly-trained-object-detection-classifier)
+2. [ตั้งค่าTensorFlow Directory และ Anaconda](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#2-ตั้งค่าTensorFlow Directory-และ-Anaconda)
+3. [ตีกรอบภาพ](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#3-ตีกรอบภาพ)
+4. [ตั้งค่า Anaconda ใหม่](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#4-ตั้งค่า-Anaconda-ใหม่)
+5. [กำหนด PYTHONPATH](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#5-กำหนด-PYTHONPATH)
+6. [ประมวลผล Protobufs และ setup.py](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#6-ประมวลผล-Protobufs-และ-setup.py)
+7. [ตั้งค่าแบบฝึกสอน(1)](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#7-ตั้งค่าแบบฝึกสอน(1))
+8. [สร้าง Label Map](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#8-สร้าง-Label-Map)
+9. [ตั้งค่าแบบฝึกสอน(2)](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#9-ตั้งค่าแบบฝึกสอน(2))
+10. [ฝึกสอนแบบจำลอง](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#10-ฝึกสอนแบบจำลอง)
+11. [Export Inference Graph](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#11-Export Inference Graph)
+12. [ทดสอบแบบจำลอง](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#12-ทดสอบแบบจำลอง)
 
 <p align="center">
   <img src="doc/collage.jpg">
