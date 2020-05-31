@@ -22,13 +22,20 @@ This readme describes every step required to get going with your own object dete
 
 ## ขั้นตอน
 ### 1. ติดตั้งโปรแกรม
-Follow [this YouTube video by Mark Jay](https://www.youtube.com/watch?v=RplXYjxgZbw), which shows the process for installing Anaconda, CUDA, and cuDNN. You do not need to actually install TensorFlow as shown in the video, because we will do that later in Step 2. The video is made for TensorFlow-GPU v1.4, so download and install the CUDA and cuDNN versions for the latest TensorFlow version, rather than CUDA v8.0 and cuDNN v6.0 as instructed in the video. The [TensorFlow website](https://www.tensorflow.org/install/gpu) indicates which versions of CUDA and cuDNN are needed for the latest version of TensorFlow. 
 
-If you are using an older version of TensorFlow, make sure you use the CUDA and cuDNN versions that are compatible with the TensorFlow version you are using. [Here](https://www.tensorflow.org/install/source#tested_build_configurations) is a table showing which version of TensorFlow requires which versions of CUDA and cuDNN.
+รวมรวบโปรแกรมต่าง ๆ ที่จำเป็นในการทำ Object Detection
 
-Be sure to install [Anaconda](https://www.anaconda.com/distribution/#download-section) as instructed in the video, because the Anaconda virtual environment will be used for the rest of this tutorial. (Note: The current version of Anaconda uses Python 3.7, which is not officially supported by TensorFlow. However, when creating an Anaconda virtual environment during Step 2d of this tutorial, we will tell it to use Python 3.5.)
+#### 1a. ติดตั้ง Visual Studio
+เข้าเว็บไซต์ [Visual Studio](https://visualstudio.microsoft.com/downloads/) ทำการดาวน์โหลดและติดตั้งโปรแกรม
 
-Visit [TensorFlow's website](https://www.tensorflow.org/install) for further installation details, including how to install it on other operating systems (like Linux). The [object detection repository](https://github.com/tensorflow/models/tree/master/research/object_detection) itself also has [installation instructions](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md).
+#### 1b. ดาวน์โหลด Setup Script
+ดาวน์โหลดไฟล์ [tensorflow-gpu.yml](https://www.dropbox.com/s/c7krpl8cp510ath/tensorflow-gpu.yml?dl=1)
+
+#### 1c. ติดตั้ง Driver Graphics
+เข้าเว็บไซต์ [Driver Graphics](https://www.nvidia.com/Download/index.aspx?lang=th) เลือกเวอร์ชันไดร์เวอร์ให้ตรงกับ GPU ที่ใช้ และติดตั้งโปรแกรม
+
+#### 1d. ติดตั้ง Visual Studio
+เข้าเว็บไซต์ [Visual Studio](https://visualstudio.microsoft.com/downloads/) ทำการดาวน์โหลดและติดตั้งโปรแกรม
 
 ### 2. Set up TensorFlow Directory and Anaconda Virtual Environment
 The TensorFlow Object Detection API requires using the specific directory structure provided in its GitHub repository. It also requires several additional Python packages, specific additions to the PATH and PYTHONPATH variables, and a few extra setup commands to get everything set up to run or train an object detection model. 
