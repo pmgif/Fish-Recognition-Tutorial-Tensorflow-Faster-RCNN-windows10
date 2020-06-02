@@ -208,6 +208,7 @@ C:\> activate tensorflow1
 ```
 
 ### 6. ประมวลผล Protobufs และ setup.py
+
 เปลี่ยน directories จากคำสั่ง
 ```
 (tensorflow1) C:\> cd C:\tensorflow1\models\research
