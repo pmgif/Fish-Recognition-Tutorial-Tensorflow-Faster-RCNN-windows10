@@ -48,7 +48,7 @@
 </p>
 
 #### 1e. ติดตั้ง cuDNN 7.6.5
-cuDNN เป็นซอฟต์แวร์เสริมของ CUDA ดังนั้นจึงต้องเลือกเวอร์ชันของ cuDNN ให้สอดคล้องกับ [CUDA]() ที่ทำการใช้ โดยสามารถดาวน์โหลดได้จากเว็บไซต์ [cuDNN](https://developer.nvidia.com/cudnn) เลือกเวอร์ชันดังภาพ จากนั้นทำการ Set Path
+cuDNN เป็นซอฟต์แวร์เสริมของ CUDA ดังนั้นจึงต้องเลือกเวอร์ชันของ cuDNN ให้สอดคล้องกับ [CUDA](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#1d-ติดตั้ง-cuda-100) ที่ทำการใช้ โดยสามารถดาวน์โหลดได้จากเว็บไซต์ [cuDNN](https://developer.nvidia.com/cudnn) เลือกเวอร์ชันดังภาพ จากนั้นทำการ Set Path
 <p align="center">
   <img src="doc/cuDNN_version_7.6.5.jpg">
 </p>
@@ -61,19 +61,19 @@ SET PATH=C:\tools\cuda\bin;
 ```
 
 #### 1f. ติดตั้ง Anaconda 3.7
-เข้าเว็บไซต์ [Anaconda](https://www.anaconda.com/distribution/) ทำการดาวน์โหลดและติดตั้งโปรแกรม จากนั้นทำการตั้งค่าดังรูปภาพ
+จะใช้โปรแกรมนี้ในการเขียนโปรแกรม โดยสามารถดาวน์โหลดได้จากเว็บไซต์ [Anaconda](https://www.anaconda.com/distribution/) และติดตั้งโปรแกรม จากนั้นทำการตั้งค่าดังรูปภาพ
 <p align="center">
   <img src="doc/Anaconda_3.7_installation.jpg">
 </p>
 
 #### 1g. ติดตั้ง TensorRT 5.0 GA for Windows
-เข้าเว็บไซต์ [TensorRT](https://developer.nvidia.com/tensorrt) ทำการดาวน์โหลดและติดตั้งโปรแกรม จากนั้นทำการ Set ที่อยู่ Path
+TensorRT เป็นซอฟต์แวร์ที่จะช่วยปรับปรุงประสิทธิภาพการรู้จำวัตถุ (Object Detection) สามารถดาวน์โหลดได้จากเว็บไซต์ [TensorRT](https://developer.nvidia.com/tensorrt) และติดตั้งโปรแกรม จากนั้นทำการ Set Path ที่อยู่ของโปรแกรม TensorRT
 
 #### 1h. ติดตั้ง Miniconda3 Python 3.7 for Windows 64-bit
-เข้าเว็บไซต์ [Miniconda3](https://docs.conda.io/en/latest/miniconda.html) ทำการดาวน์โหลดและติดตั้งโปรแกรม
+Miniconda3 เป็นส่วนหนึ่งของ Anaconda ซึ่งเป็นเฟรมเวิร์คสำหรับการทำ data science สำหรับภาษาไพทอน สามารถดาวน์โหลดได้จากเว็บไซต์ [Miniconda3](https://docs.conda.io/en/latest/miniconda.html) ทำการดาวน์โหลดและติดตั้งโปรแกรม
 
 #### 1i. ติดตั้ง Python 3.7.6
-เข้าเว็บไซต์ [Python](https://www.python.org/downloads/) ทำการดาวน์โหลดและติดตั้งโปรแกรม จากนั้นทำการตั้งค่าดังรูปภาพ
+เป็นโปรแกรมที่ใช้เขียนภาษา Python โดยภาษา Python จะนำมาใช้ในส่วนของการเขียนคำสั่งในการประมวลผล Object Detection สามารถดาวน์โหลดได้จากเว็บไซต์ [Python](https://www.python.org/downloads/) และติดตั้งโปรแกรม จากนั้นทำการตั้งค่าดังรูปภาพ
 <p align="center">
   <img src="doc/Python_installation.jpg">
 </p>
