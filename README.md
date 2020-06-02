@@ -147,17 +147,17 @@ C:\Users\gif> Conda activate tensorflow
   <img src="doc/object_detection_directory.jpg">
 </p>
 
-You can also download the frozen inference graph for my trained Pinochle Deck card detector [from this Dropbox link](https://www.dropbox.com/s/va9ob6wcucusse1/inference_graph.zip?dl=0) and extract the contents to \object_detection\inference_graph. This inference graph will work "out of the box". You can test it after all the setup instructions in Step 2a - 2f have been completed by running the Object_detection_image.py (or video or webcam) script.
+นอกจากนี้คุณยังสามารถดาวน์โหลด frozen inference graph สำหรับ Fish Recognition ที่ผ่านการ Train ของเรา [จากลิงก์ Dropbox นี้] (https://www.dropbox.com/s/va9ob6wcucusse1/inference_graph.zip?dl=1) และแยกเนื้อหาไปที่ \ object_detection \ inference_graph โดย inference graph นี้จะมีรอบการทำงาน คุณสามารถทดสอบได้หลังจากคำแนะนำการตั้งค่าทั้งหมดในขั้นตอนที่ 2a - 2f เสร็จสมบูรณ์โดยเรียกใช้สคริปต์ Object_detection_image.py (หรือวิดีโอหรือเว็บแคม)
 
 จากนั้นทำตามขั้นตอนย่อยต่อไปนี้ (ห้ามลบโฟลเดอร์ดังกล่าว):
 - ลบทุกไฟล์จากโฟลเดอร์ \object_detection\training
 -	ลบทุกไฟล์จากโฟลเดอร์ \object_detection\inference_graph
 - ลบไฟล์ “test_labels.csv” และ “train_labels.csv” จาก \object_detection\images
-- หากต้องการใช้ภาพของตนเองในการทดสอบ ให้ทำการลบทุกไฟล์ในโฟลเดอร์ \object_detection\images\train และ \object_detection\images\test
+- ลบไฟล์ในโฟลเดอร์ \object_detection\images\train และ \object_detection\images\test (หากต้องการใช้ภาพของตนเองในการทดสอบ แต่หากต้องการใช้ภาพปลาในการทดสอบ สามารถดาวน์โหลดได้จาก [dropbox](https://www.dropbox.com/sh/fmbncuvsjg75mkv/AAAb4B9rs6w4jyNeuao-SGxva?dl=1) ของฉัน)
 
 ### 3.ตีกรอบภาพ
 
-ทำการตีกรอบภาพ เพื่อให้ได้ไฟล์ .xml โดยเราจะใช้โปรแกรม LabelImg ซึ่งสามารถศึกษาโปรแกรมเพิ่มเติมได้จาก [LabelImg GitHub link](https://github.com/tzutalin/labelImg) หรือจะดาวน์โหลดโดยตรงได้จาก [LabelImg download link](https://www.dropbox.com/sh/sryfvbr43efumr5/AAD3Af7D7cgUePbTh6E_ppPga?dl=1) โดยเราจะใช้เวอร์ชัน 1.6
+ทำการตีกรอบภาพ เพื่อให้ได้ไฟล์ .xml โดยเราจะใช้โปรแกรม LabelImg ซึ่งสามารถศึกษาโปรแกรมเพิ่มเติมได้จาก [LabelImg GitHub link](https://github.com/tzutalin/labelImg) หรือจะดาวน์โหลดโดยตรงได้จาก [LabelImg download link](https://www.dropbox.com/sh/sryfvbr43efumr5/AAD3Af7D7cgUePbTh6E_ppPga?dl=1) โดยเราจะใช้เวอร์ชัน 1.6 ในการตีกรอบภาพ
 
 จากนั้นทำการตีกรอบภาพ ดังรูปภาพ
 
@@ -168,49 +168,49 @@ You can also download the frozen inference graph for my trained Pinochle Deck ca
 ### 4. ตั้งค่า Anaconda ใหม่
 เปิดโปรแกรม Anaconda Prompt โดยคลิกขวาเลือกเป็น “Run as Administrator”
 
-พิมพ์คำสั่งเพื่อสร้าง virtual environment ขึ้นมาใหม่ โดยตั้งชื่อว่า tensorflow พร้อมกับติดตั้ง python เวอร์ชัน 3.7
+พิมพ์คำสั่งเพื่อสร้าง virtual environment ขึ้นมาใหม่ โดยตั้งชื่อว่า tensorflow1 พร้อมกับติดตั้ง python เวอร์ชัน 3.7
 ```
-C:\> conda create -n tensorflow pip python=3.7
+C:\> conda create -n tensorflow1 pip python=3.7
 ```
 จากนั้น เปิดใช้งาน environment ด้วยคำสั่ง
 ```
-C:\> activate tensorflow
+C:\> activate tensorflow1
 ```
 อัปเดทเวอร์ชันของ pip จากเวอร์ชัน pip 10.0.1 เป็นเวอร์ชันล่าสุด
 ```
-(tensorflow) C:\>python -m pip install --upgrade pip
+(tensorflow1) C:\>python -m pip install --upgrade pip
 ```
 ติดตั้ง tensorflow-gpu เวอร์ชัน 1.15 ด้วยคำสั่งดังนี้ *(เนื่องจากเวอร์ชัน tensorflow-gpu ที่ลงตอนติดตั้ง jupyter เป็นเวอร์ชัน 2.0.0 ไม่สามารถใช้ทดสอบได้ จึงเปลี่ยนเป็น tensorflow-gpu เวอร์ชัน 1.15 สามารถพิมพ์คำสั่งลงไปได้เลย เนื่องจากตัวโปรแกรมจะถอนการติดตั้ง tensorflow-gpu เวอร์ชัน 2.0.0 ให้อัตโนมัติ)*
 ```
-(tensorflow) C:\> pip install --ignore-installed --upgrade tensorflow-gpu==1.15
+(tensorflow1) C:\> pip install --ignore-installed --upgrade tensorflow-gpu==1.15
 ```
 ติดตั้งแพคเกจย่อยอื่น ๆ ด้วยคำสั่ง
 ```
-(tensorflow) C:\> conda install -c anaconda protobuf
-(tensorflow) C:\> pip install pillow
-(tensorflow) C:\> pip install lxml
-(tensorflow) C:\> pip install Cython
-(tensorflow) C:\> pip install contextlib2
-(tensorflow) C:\> pip install jupyter
-(tensorflow) C:\> pip install matplotlib
-(tensorflow) C:\> pip install pandas
-(tensorflow) C:\> pip install opencv-python
+(tensorflow1) C:\> conda install -c anaconda protobuf
+(tensorflow1) C:\> pip install pillow
+(tensorflow1) C:\> pip install lxml
+(tensorflow1) C:\> pip install Cython
+(tensorflow1) C:\> pip install contextlib2
+(tensorflow1) C:\> pip install jupyter
+(tensorflow1) C:\> pip install matplotlib
+(tensorflow1) C:\> pip install pandas
+(tensorflow1) C:\> pip install opencv-python
 ```
 
 ### 5. กำหนด PYTHONPATH
 กำหนด PYTHONPATH
 ```
-(tensorflow) C:\> set PYTHONPATH=C:\tensorflow\models;C:\tensorflow\models\research;C:\tensorflow\models\research\slim
+(tensorflow1) C:\> set PYTHONPATH=C:\tensorflow1\models;C:\tensorflow1\models\research;C:\tensorflow1\models\research\slim
 ```
 สามารถตรวจสอบ PYTHONPATH จากคำสั่ง
 ```
-(tensorflow) C:\> echo %PYTHONPATH%
+(tensorflow1) C:\> echo %PYTHONPATH%
 ```
 
 ### 6. ประมวลผล Protobufs และ setup.py
 เปลี่ยน directories จากคำสั่ง
 ```
-(tensorflow) C:\> cd C:\tensorflow\models\research
+(tensorflow1) C:\> cd C:\tensorflow1\models\research
 ```
 Tensorflow ใช้ Protobuf เพื่อกำหนดค่าแบบจำลองและพารามิเตอร์ของการฝึกสอนแบบจำลอง โดยสิ่งนี้จะสร้างไฟล์ name_pb2.py ไว้ในโฟลเดอร์ \ object_detection \ protos
 ```
@@ -218,20 +218,21 @@ protoc --python_out=. .\object_detection\protos\anchor_generator.proto .\object_
 ```
 คำสั่งการรวบรวมไฟล์ protoc แบบสั้นที่สำหรับการติดตั้ง Object Detection API ของ TensorFlow นั้น ไม่สามารถทำงานบน Windows ได้ ดังนั้นไฟล์ .proto ทุกไฟล์ในไดเร็กทอรี \ object_detection \ protos จึงต้องถูกเรียกใช้โดยคำสั่งทีละรายการ
 ```
-(tensorflow) C:\tensorflow\models\research> python setup.py build
-(tensorflow) C:\tensorflow\models\research> python setup.py install
+(tensorflow1) C:\tensorflow1\models\research> python setup.py build
+(tensorflow1) C:\tensorflow1\models\research> python setup.py install
 ```
 
 ### 7. ตั้งค่าแบบฝึกสอน(1)
-With the images labeled, it’s time to generate the TFRecords that serve as input data to the TensorFlow training model. This tutorial uses the xml_to_csv.py and generate_tfrecord.py scripts from [Dat Tran’s Raccoon Detector dataset](https://github.com/datitran/raccoon_dataset), with some slight modifications to work with our directory structure.
+
+สร้าง TFRecords ที่ทำหน้าที่เป็นข้อมูลป้อนเข้าในรูปแบบการฝึกอบรม TensorFlow ขั้นตอนนี้จะใช้สคริปต์ xml_to_csv.py และ generate_tfrecord.py จากชุดข้อมูล โดยทำการแก้ไขเล็กน้อยเพื่อให้ทำงานกับโครงสร้างไดเรกทอรีของเรา
 
 เปลี่ยน directories จากคำสั่งดังนี้
 ```
-(tensorflow) C:\tensorflow\models\research> cd object_detection
+(tensorflow1) C:\tensorflow1\models\research> cd object_detection
 ```
 นำไฟล์ข้อมูลภาพ .xml ที่มีข้อมูลทั้งหมดในแฟ้มข้อมูล train และ test ไปแปลงไฟล์เพื่อสร้างไฟล์ .csv
 ```
-(tensorflow) C:\tensorflow\models\research\object_detection> python xml_to_csv.py
+(tensorflow1) C:\tensorflow1\models\research\object_detection> python xml_to_csv.py
 ```
 แก้ไขไฟล์ generate_tfrecord.py จากโฟลเดอร์ \object_detection เพื่อระบุ label map ของตัวรูปแบบจำลอง
 ```
@@ -274,7 +275,7 @@ python generate_tfrecord.py --csv_input=images\test_labels.csv --image_dir=image
 ```
 
 ### 8. สร้าง Label Map
-สร้างไฟล์ labelmap.pbtxt ลงในโฟลเดอร์ C: \ tensorflow7 \ models \ research \ object_detection \ training เพื่อกำหนดว่าแต่ละวัตถุคืออะไร โดยกำหนดชื่อคลาสและหมายเลข ID คลาส ให้ตรงกับชื่อคลาสและหมายเลข ID ของไฟล์ generate_tfrecord.py
+สร้างไฟล์ labelmap.pbtxt ลงในโฟลเดอร์ C: \ tensorflow1 \ models \ research \ object_detection \ training เพื่อกำหนดว่าแต่ละวัตถุคืออะไร โดยกำหนดชื่อคลาสและหมายเลข ID คลาส ให้ตรงกับชื่อคลาสและหมายเลข ID ของไฟล์ generate_tfrecord.py
 ```
 item {
   id: 1
@@ -330,7 +331,7 @@ item {
 ```
 
 ### 9. ตั้งค่าแบบฝึกสอน(2)
-คัดลอกไฟล์ faster_rcnn_inception_v2_pets.config จาก C: \ tensorflow7 \ models \ research \ object_detection \ samples \ configs ไปยัง \ object_detection \ training จากนั้นเปิดไฟล์ด้วยโปรแกรม notepad++ และแก้ไข code ซึ่งมีการเปลี่ยนแปลงหลายอย่างในไฟล์ .config
+คัดลอกไฟล์ faster_rcnn_inception_v2_pets.config จาก C: \ tensorflow1 \ models \ research \ object_detection \ samples \ configs ไปยัง \ object_detection \ training จากนั้นเปิดไฟล์ด้วยโปรแกรม notepad++ และแก้ไข code ซึ่งมีการเปลี่ยนแปลงหลายอย่างในไฟล์ .config
 
 - บรรทัดที่ 9 เปลี่ยน num_classes (จำนวนของวัตถุต่าง ๆ ที่ต้องการให้ตัวแยกประเภทตรวจจับ) ในการฝึกสอนแบบจำลองมีจำนวนปลาที่ถูกนำมาฝึกสอนแบบจำลองทั้งหมด 8 สายพันธ์ุ
 ```
@@ -377,9 +378,9 @@ TensorFlow จะเริ่มต้นการฝึกสอนแบบจ
   <img src="doc/training.jpg">
 </p>
 
-ระหว่างการฝึกสอนแบบจำลองสามารถดูความก้าวหน้าโดยใช้ TensorBoard โดยคำสั่งนี้จะต้องเปิดในอินสแตนซ์ใหม่ของ Anaconda Prompt และเปิดใช้งาน environment tensorflow7 เปลี่ยนเป็นไดเรกทอรี C: \ tensorflow7 \ models \ research \ object_detection และใช้คำสั่ง
+ระหว่างการฝึกสอนแบบจำลองสามารถดูความก้าวหน้าโดยใช้ TensorBoard โดยคำสั่งนี้จะต้องเปิดในอินสแตนซ์ใหม่ของ Anaconda Prompt และเปิดใช้งาน environment tensorflow1 เปลี่ยนเป็นไดเรกทอรี C: \ tensorflow1 \ models \ research \ object_detection และใช้คำสั่ง
 ```
-(tensorflow) C:\tensorflow\models\research\object_detection>tensorboard --logdir=training
+(tensorflow1) C:\tensorflow1\models\research\object_detection>tensorboard --logdir=training
 ```
 โดย code ดังกล่าวจะสร้างเว็บเพจบนเครื่องคอมพิวเตอร์ YourPCName: 6006 สามารถดูได้ผ่านเว็บเบราว์เซอร์ หน้า TensorBoard จะให้ข้อมูลและกราฟที่แสดงว่าการฝึกสอนแบบจำลองมีความก้าวหน้าอย่างไร โดยกราฟนี้จะแสดงค่า loss ที่แสดงค่าความแม่นยำของแต่ละภาพในการฝึกสอนแบบจำลอง โดยแกน x หมายถึง ค่า Num Step (รอบการทำงาน) แกน y หมายถึง ค่า loss
 
@@ -399,9 +400,9 @@ python export_inference_graph.py --input_type image_tensor --pipeline_config_pat
 ```
 
 ### 12. ทดสอบแบบจำลอง
-เรียกใช้สคริปต์โดยพิมพ์ลงในพรอมต์คำสั่งของ Anaconda (เมื่อเปิดใช้งาน environment “tensorflow7”) แล้วกด ENTER ซึ่งคำสั่งนี้จะเป็นการเปิด python shell เพื่อเรียกใช้งานสคริปต์ต่าง ๆ
+เรียกใช้สคริปต์โดยพิมพ์ลงในพรอมต์คำสั่งของ Anaconda (เมื่อเปิดใช้งาน environment “tensorflow1”) แล้วกด ENTER ซึ่งคำสั่งนี้จะเป็นการเปิด python shell เพื่อเรียกใช้งานสคริปต์ต่าง ๆ
 ```
-(tensorflow) C:\tensorflow\models\research\object_detection> idle
+(tensorflow1) C:\tensorflow1\models\research\object_detection> idle
 ```
 - เปิดไฟล์ Object_detection_image.py จากแฟ้มข้อมูล \ object_detection
 - บรรทัดที่ 50 แก้ไขจำนวน num class ของไฟล์ Object_detection_image.py
