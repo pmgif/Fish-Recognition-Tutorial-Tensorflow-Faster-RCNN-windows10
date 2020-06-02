@@ -1,12 +1,15 @@
 # Fish Recognition Tutorial Tensorflow Faster RCNN windows10
 
 ## แนะนำ
+สวัสดีค่ะ GitHub นี้จะอธิบายถึงการทำ Object Detection โดยใช้ Tensorflow Faster R-CNN model โดยตัวอย่างที่ใช้ทดสอบจะเป็นการทำ Fish Recognition โดยใช้ระบบปฏิบัติการบน Windows และใช้ GPU ในการประมวลผล
+
+*ขอบคุณ ที่มา การติดตั้งโปรแกรมจาก [Jeff Heaton](https://youtu.be/qrkEYf-YDyI) และการทำ Tensorflow จาก [EdjeElectronics](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10)*
  
 **วีดีโอการสอนทำเกี่ยวกับ Object Detection**
 
 [![Link to my YouTube video!](https://raw.githubusercontent.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10/master/doc/YouTube%20video.jpg)](https://www.youtube.com/watch?v=Rgpfk6eYxJA)
 
-This readme describes every step required to get going with your own object detection classifier: 
+สามารถอธิบายขั้นตอนการทำ Tensorflow ได้ดังต่อไปนี้ :
 1. [ติดตั้งโปรแกรม](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#1-ติดตั้งโปรแกรม)
 2. [ตั้งค่า TensorFlow Directory และ Anaconda](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#2-ตั้งค่า-TensorFlow-Directory-และ-Anaconda)
 3. [ตีกรอบภาพ](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#3-ตีกรอบภาพ)
@@ -27,25 +30,25 @@ This readme describes every step required to get going with your own object dete
 ## ขั้นตอน
 ### 1. ติดตั้งโปรแกรม
 
-รวมรวบโปรแกรมต่าง ๆ ที่จำเป็นในการทำ Object Detection
+ขั้นตอนนี้เป็นการรวบรวมโปรแกรมต่าง ๆ ที่จำเป็นในการทำ Object Detection
 
 #### 1a. ติดตั้ง Visual Studio
-เข้าเว็บไซต์ [Visual Studio](https://visualstudio.microsoft.com/downloads/) ทำการดาวน์โหลดและติดตั้งโปรแกรม
+เป็นโปรแกรมพื้นฐาน และส่วน Integrated Development Environment เป็นส่วนที่จำเป็นในการติดตั้ง CUDA สามารถดาวน์โหลดได้โดยเข้าเว็บไซต์ [Visual Studio](https://visualstudio.microsoft.com/downloads/) จากนั้นทำการติดตั้งโปรแกรม
 
 #### 1b. ดาวน์โหลด Setup Script
 ดาวน์โหลดไฟล์ [tensorflow-gpu.yml](https://www.dropbox.com/s/c7krpl8cp510ath/tensorflow-gpu.yml?dl=1)
 
 #### 1c. ติดตั้ง Driver Graphics
-เข้าเว็บไซต์ [Driver Graphics](https://www.nvidia.com/Download/index.aspx?lang=th) เลือกเวอร์ชันไดร์เวอร์ให้ตรงกับ GPU ที่ใช้ และติดตั้งโปรแกรม
+ลง Driver ให้ตรงกับ GPU ที่ใช้ และติดตั้งโปรแกรม โดยดาวน์โหลดได้จากเว็บไซต์ [Driver Graphics](https://www.nvidia.com/Download/index.aspx?lang=th)
 
 #### 1d. ติดตั้ง CUDA 10.0
-เข้าเว็บไซต์ [CUDA](https://developer.nvidia.com/cuda-10.0-download-archive) เลือกเวอร์ชันดังภาพ
+เราจะใช้ในการประมวลผล GPU สามารถดาวน์โหลดได้จากเว็บไซต์ [CUDA](https://developer.nvidia.com/cuda-10.0-download-archive) เลือกเวอร์ชันดังภาพ
 <p align="center">
   <img src="doc/cuDNN_version_7.6.5.jpg">
 </p>
 
 #### 1e. ติดตั้ง cuDNN 7.6.5
-เข้าเว็บไซต์ [cuDNN](https://developer.nvidia.com/cudnn) เลือกเวอร์ชันดังภาพ จากนั้นทำการ Set Path
+cuDNN เป็นซอฟต์แวร์เสริมของ CUDA ดังนั้นจึงต้องเลือกเวอร์ชันของ cuDNN ให้สอดคล้องกับ [CUDA]() ที่ทำการใช้ โดยสามารถดาวน์โหลดได้จากเว็บไซต์ [cuDNN](https://developer.nvidia.com/cudnn) เลือกเวอร์ชันดังภาพ จากนั้นทำการ Set Path
 <p align="center">
   <img src="doc/cuDNN_version_7.6.5.jpg">
 </p>
