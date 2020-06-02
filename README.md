@@ -81,31 +81,31 @@ Miniconda3 เป็นส่วนหนึ่งของ Anaconda ซึ่�
 #### 1j. ติดตั้ง Jupyter
 เปิดใช้งานโปรแกรม Command Prompt และพิมพ์คำสั่ง
 ```
-C:\Users\Madi> conda install jupyter
+C:\Users\gif> conda install jupyter
 ```
 
 #### 1k. ประมวลผล Setup Script
  1. ค้นหาที่อยู่ของไฟล์ .yml
 ```
-C:\Users\Madi> dir *.yml
+C:\Users\gif> dir *.yml
 ```
  2. สร้าง Environment ของ tensorflow.yml โดยใช้ conda ในการสร้าง
 ```
-C:\Users\Madi> conda env create -v -f tensorflow.yml
+C:\Users\gif> conda env create -v -f tensorflow.yml
 ```
 
 #### 1l. ติดตั้ง Jupyter Kernel
  1. เปิดใช้งาน environment tensorflow โดยใช้ conda ด้วยคำสั่ง
 ```
-C:\Users\Madi> Conda activate tensorflow
+C:\Users\gif> Conda activate tensorflow
 ```
  2. ติดตั้ง Jupyter Kernel ของ python เวอร์ชัน 3.7 ด้วยคำสั่ง
 ```
-(tensorflow) C:\Users\Madi> python -m ipykernel install --user --name tensorflow --display-name "Python 3.7 (tensorflow)"
+(tensorflow) C:\Users\gif> python -m ipykernel install --user --name tensorflow --display-name "Python 3.7 (tensorflow)"
 ```
  3. ทดลองเขียน python เพื่อทดสอบการใช้งานของ tensorflow
 ```
-(tensorflow) C:\Users\Madi> python
+(tensorflow) C:\Users\gif> python
 ```
  4. พิมพ์คำสั่ง python ทีละคำสั่ง
 ```
@@ -119,11 +119,11 @@ C:\Users\Madi> Conda activate tensorflow
  2. แตกไฟล์ t81_558_deep_learning-master
  3. เปลี่ยน directory เพื่อเข้าไปใน directory t81_558_deep_learning-master
 ```
-(tensorflow) C:\Users\Madi> cd t81_558_deep_learning-master
+(tensorflow) C:\Users\gif> cd t81_558_deep_learning-master
 ```
  4. เรียกใช้ jupyter notebook
 ```
-(tensorflow) C:\Users\Madi\t81_558_deep_learning-master> jupyter notebook
+(tensorflow) C:\Users\gif\t81_558_deep_learning-master> jupyter notebook
 ```
  5. เลือกเปิดไฟล์ โดยใช้บราวเซอร์ชนิดใดก็ได้
  6. เลือกไฟล์ t81_558_class_01_1_overview.ipynb
@@ -377,7 +377,7 @@ TensorFlow จะเริ่มต้นการฝึกสอนแบบจ
 
 ระหว่างการฝึกสอนแบบจำลองสามารถดูความก้าวหน้าโดยใช้ TensorBoard โดยคำสั่งนี้จะต้องเปิดในอินสแตนซ์ใหม่ของ Anaconda Prompt และเปิดใช้งาน environment tensorflow7 เปลี่ยนเป็นไดเรกทอรี C: \ tensorflow7 \ models \ research \ object_detection และใช้คำสั่ง
 ```
-(tensorflow1) C:\tensorflow1\models\research\object_detection>tensorboard --logdir=training
+(tensorflow) C:\tensorflow\models\research\object_detection>tensorboard --logdir=training
 ```
 โดย code ดังกล่าวจะสร้างเว็บเพจบนเครื่องคอมพิวเตอร์ YourPCName: 6006 สามารถดูได้ผ่านเว็บเบราว์เซอร์ หน้า TensorBoard จะให้ข้อมูลและกราฟที่แสดงว่าการฝึกสอนแบบจำลองมีความก้าวหน้าอย่างไร โดยกราฟนี้จะแสดงค่า loss ที่แสดงค่าความแม่นยำของแต่ละภาพในการฝึกสอนแบบจำลอง โดยแกน x หมายถึง ค่า Num Step (รอบการทำงาน) แกน y หมายถึง ค่า loss
 
