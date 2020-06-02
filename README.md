@@ -3,7 +3,7 @@
 ## แนะนำ
 สวัสดีค่ะ GitHub นี้จะอธิบายถึงการทำ Object Detection โดยใช้ Tensorflow Faster R-CNN model โดยตัวอย่างที่ใช้ทดสอบจะเป็นการทำ Fish Recognition โดยใช้ระบบปฏิบัติการบน Windows และใช้ GPU ในการประมวลผล
 
-*ขอบคุณ ที่มา การติดตั้งโปรแกรมจาก [Jeff Heaton](https://youtu.be/qrkEYf-YDyI) และการทำ Tensorflow จาก [EdjeElectronics](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10)*
+*ขอบคุณ ที่มา : การติดตั้งโปรแกรมจาก [Jeff Heaton](https://youtu.be/qrkEYf-YDyI) และการทำ Tensorflow จาก [EdjeElectronics](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10)*
  
 **วีดีโอการสอนทำเกี่ยวกับ Object Detection**
 
@@ -131,6 +131,8 @@ C:\Users\gif> Conda activate tensorflow
  8. ประมวลผล code ดังกล่าว เพื่อเรียกใช้งาน GPU
 
 ### 2. ตั้งค่า TensorFlow Directory และ Anaconda
+
+ขั้นตอนนี้เป็นขั้นตอนการตั้งค่าโมเดลสำหรับตรวจจับวัตุ ทำตามขั้นตอนต่อไปนี้ เพื่อไม่ให้เกิดความผิดพลาด
 
 #### 2a. Download TensorFlow Object Detection API repository from GitHub
 สร้างโฟลเดอร์ไว้ที่ ไดร์ฟ C โดยตั้งชื่อว่า tensorflow จากนั้นทำการดาวน์โหลด full TensorFlow object detection จาก [Github](https://github.com/tensorflow/models) ทำการแตกไฟล์ และนำไฟล์มาไว้ในโฟลเดอร์ tensorflow จากนั้นทำการเปลี่ยนชื่อจาก “models-master” to just “models”.
