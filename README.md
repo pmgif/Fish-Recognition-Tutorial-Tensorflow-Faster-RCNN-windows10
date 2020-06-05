@@ -7,8 +7,6 @@
  
 **วีดีโอการสอนทำเกี่ยวกับ Object Detection**
 
-[![Link to my YouTube video!](https://raw.githubusercontent.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10/master/doc/YouTube%20video.jpg)](https://www.youtube.com/watch?v=Rgpfk6eYxJA)
-
 สามารถอธิบายขั้นตอนการทำ Tensorflow ได้ดังต่อไปนี้ :
 1. [ติดตั้งโปรแกรม](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#1-ติดตั้งโปรแกรม)
 2. [ตั้งค่า TensorFlow Directory และ Anaconda](https://github.com/pmgif/Fish-Recognition-Tutorial-Tensorflow-Faster-RCNN-windows10#2-ตั้งค่า-TensorFlow-Directory-และ-Anaconda)
