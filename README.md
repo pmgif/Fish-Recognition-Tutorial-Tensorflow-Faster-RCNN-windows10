@@ -87,7 +87,7 @@ C:\Users\gif> conda install jupyter
 ```
 C:\Users\gif> dir *.yml
 ```
- 2. สร้าง Environment ของ tensorflow.yml โดยใช้ conda ในการสร้าง
+ 2. สร้าง Environment ของ tensorflow-gpu.yml โดยใช้ conda ในการสร้าง
 ```
 C:\Users\gif> conda env create -v -f tensorflow-gpu.yml
 ```
