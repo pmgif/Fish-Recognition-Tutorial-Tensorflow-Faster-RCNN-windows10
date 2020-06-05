@@ -89,7 +89,7 @@ C:\Users\gif> dir *.yml
 ```
  2. สร้าง Environment ของ tensorflow.yml โดยใช้ conda ในการสร้าง
 ```
-C:\Users\gif> conda env create -v -f tensorflow.yml
+C:\Users\gif> conda env create -v -f tensorflow-gpu.yml
 ```
 
 #### 1l. ติดตั้ง Jupyter Kernel
