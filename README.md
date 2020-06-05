@@ -42,7 +42,7 @@
 #### 1d. ติดตั้ง CUDA 10.0
 เราจะใช้ในการประมวลผล GPU สามารถดาวน์โหลดได้จากเว็บไซต์ [CUDA](https://developer.nvidia.com/cuda-10.0-download-archive) เลือกเวอร์ชันดังภาพ
 <p align="center">
-  <img src="doc/cuDNN_version_7.6.5.jpg">
+  <img src="doc/CUDA_version_10.0.jpg">
 </p>
 
 #### 1e. ติดตั้ง cuDNN 7.6.5
