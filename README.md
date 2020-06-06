@@ -151,7 +151,7 @@ C:\Users\gif> Conda activate tensorflow
 - ลบทุกไฟล์จากโฟลเดอร์ \object_detection\training
 -	ลบทุกไฟล์จากโฟลเดอร์ \object_detection\inference_graph
 - ลบไฟล์ “test_labels.csv” และ “train_labels.csv” จาก \object_detection\images
-- ลบไฟล์ในโฟลเดอร์ \object_detection\images\train และ \object_detection\images\test (หากต้องการใช้ภาพของตนเองในการทดสอบ แต่หากต้องการใช้ภาพปลาในการทดสอบ สามารถดาวน์โหลดได้จาก [dropbox](https://www.dropbox.com/sh/fmbncuvsjg75mkv/AAAb4B9rs6w4jyNeuao-SGxva?dl=1) ของฉัน)
+- ลบไฟล์ในโฟลเดอร์ \object_detection\images\train และ \object_detection\images\test (หากต้องการใช้ภาพของตนเองในการทดสอบ แต่หากต้องการใช้ภาพปลาในการทดสอบ สามารถดาวน์โหลดได้จาก [dropbox](https://www.dropbox.com/sh/fmbncuvsjg75mkv/AAAb4B9rs6w4jyNeuao-SGxva?dl=0) ของฉัน)
 
 ### 3.ตีกรอบภาพ
 
