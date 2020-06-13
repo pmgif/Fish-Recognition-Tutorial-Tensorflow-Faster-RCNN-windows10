@@ -61,14 +61,14 @@ SET PATH=C:\tools\cuda\bin;
 #### 1f. ติดตั้ง TensorRT 5.0 GA for Windows
 TensorRT เป็นซอฟต์แวร์ที่จะช่วยปรับปรุงประสิทธิภาพการรู้จำวัตถุ (Object Detection) สามารถดาวน์โหลดได้จากเว็บไซต์ [TensorRT](https://developer.nvidia.com/tensorrt) และติดตั้งโปรแกรม จากนั้นทำการ Set Path ที่อยู่ของโปรแกรม TensorRT
 
-#### 1g. ติดตั้ง Anaconda 3.7
+#### 1g. ติดตั้ง Miniconda3 Python 3.7 for Windows 64-bit
+Miniconda3 เป็นส่วนหนึ่งของ Anaconda ซึ่งเป็นเฟรมเวิร์คสำหรับการทำ data science สำหรับภาษาไพทอน สามารถดาวน์โหลดได้จากเว็บไซต์ [Miniconda3](https://docs.conda.io/en/latest/miniconda.html) ทำการดาวน์โหลดและติดตั้งโปรแกรม
+
+#### 1h. ติดตั้ง Anaconda 3.7
 จะใช้โปรแกรมนี้ในการเขียนโปรแกรม โดยสามารถดาวน์โหลดได้จากเว็บไซต์ [Anaconda](https://www.anaconda.com/distribution/) และติดตั้งโปรแกรม จากนั้นทำการตั้งค่าดังรูปภาพ
 <p align="center">
   <img src="doc/Anaconda_3.7_installation.jpg">
 </p>
-
-#### 1h. ติดตั้ง Miniconda3 Python 3.7 for Windows 64-bit
-Miniconda3 เป็นส่วนหนึ่งของ Anaconda ซึ่งเป็นเฟรมเวิร์คสำหรับการทำ data science สำหรับภาษาไพทอน สามารถดาวน์โหลดได้จากเว็บไซต์ [Miniconda3](https://docs.conda.io/en/latest/miniconda.html) ทำการดาวน์โหลดและติดตั้งโปรแกรม
 
 #### 1i. ติดตั้ง Python 3.7.6
 เป็นโปรแกรมที่ใช้เขียนภาษา Python โดยภาษา Python จะนำมาใช้ในส่วนของการเขียนคำสั่งในการประมวลผล Object Detection สามารถดาวน์โหลดได้จากเว็บไซต์ [Python](https://www.python.org/downloads/) และติดตั้งโปรแกรม จากนั้นทำการตั้งค่าดังรูปภาพ
