@@ -34,7 +34,7 @@
 เป็นโปรแกรมพื้นฐาน และส่วน Integrated Development Environment เป็นส่วนที่จำเป็นในการติดตั้ง CUDA สามารถดาวน์โหลดได้โดยเข้าเว็บไซต์ [Visual Studio](https://visualstudio.microsoft.com/downloads/) จากนั้นทำการติดตั้งโปรแกรม
 
 #### 1b. ดาวน์โหลด Setup Script
-ดาวน์โหลดไฟล์ [tensorflow-gpu.yml](https://www.dropbox.com/s/c7krpl8cp510ath/tensorflow-gpu.yml?dl=1)
+ดาวน์โหลดไฟล์ tensorflow-gpu.yml จาก [GitHub](https://github.com/jeffheaton/t81_558_deep_learning) นี้
 
 #### 1c. ติดตั้ง Driver Graphics
 ลง Driver ให้ตรงกับ GPU ที่ใช้ และติดตั้งโปรแกรม โดยดาวน์โหลดได้จากเว็บไซต์ [Driver Graphics](https://www.nvidia.com/Download/index.aspx?lang=th)
@@ -176,7 +176,7 @@ C:\> activate tensorflow1
 ```
 อัปเดทเวอร์ชันของ pip จากเวอร์ชัน pip 10.0.1 เป็นเวอร์ชันล่าสุด
 ```
-(tensorflow1) C:\>python -m pip install --upgrade pip
+(tensorflow1) C:\> python -m pip install --upgrade pip
 ```
 ติดตั้ง tensorflow-gpu เวอร์ชัน 1.15 ด้วยคำสั่งดังนี้ *(เนื่องจากเวอร์ชัน tensorflow-gpu ที่ลงตอนติดตั้ง jupyter เป็นเวอร์ชัน 2.0.0 ไม่สามารถใช้ทดสอบได้ จึงเปลี่ยนเป็น tensorflow-gpu เวอร์ชัน 1.15 สามารถพิมพ์คำสั่งลงไปได้เลย เนื่องจากตัวโปรแกรมจะถอนการติดตั้ง tensorflow-gpu เวอร์ชัน 2.0.0 ให้อัตโนมัติ)*
 ```
@@ -379,7 +379,7 @@ TensorFlow จะเริ่มต้นการฝึกสอนแบบจ
 
 ระหว่างการฝึกสอนแบบจำลองสามารถดูความก้าวหน้าโดยใช้ TensorBoard โดยคำสั่งนี้จะต้องเปิดในอินสแตนซ์ใหม่ของ Anaconda Prompt และเปิดใช้งาน environment tensorflow1 เปลี่ยนเป็นไดเรกทอรี C: \ tensorflow1 \ models \ research \ object_detection และใช้คำสั่ง
 ```
-(tensorflow1) C:\tensorflow1\models\research\object_detection>tensorboard --logdir=training
+(tensorflow1) C:\tensorflow1\models\research\object_detection> tensorboard --logdir=training
 ```
 โดย code ดังกล่าวจะสร้างเว็บเพจบนเครื่องคอมพิวเตอร์ YourPCName: 6006 สามารถดูได้ผ่านเว็บเบราว์เซอร์ หน้า TensorBoard จะให้ข้อมูลและกราฟที่แสดงว่าการฝึกสอนแบบจำลองมีความก้าวหน้าอย่างไร โดยกราฟนี้จะแสดงค่า loss ที่แสดงค่าความแม่นยำของแต่ละภาพในการฝึกสอนแบบจำลอง โดยแกน x หมายถึง ค่า Num Step (รอบการทำงาน) แกน y หมายถึง ค่า loss
 
