@@ -95,7 +95,7 @@ C:\Users\gif> conda env create -v -f tensorflow-gpu.yml
 #### 1l. ติดตั้ง Jupyter Kernel
  1. เปิดใช้งาน environment tensorflow โดยใช้ conda ด้วยคำสั่ง
 ```
-C:\Users\gif> Conda activate tensorflow
+C:\Users\gif> conda activate tensorflow
 ```
  2. ติดตั้ง Jupyter Kernel ของ python เวอร์ชัน 3.7 ด้วยคำสั่ง
 ```
