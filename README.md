@@ -34,7 +34,7 @@
 เป็นโปรแกรมพื้นฐาน และส่วน Integrated Development Environment เป็นส่วนที่จำเป็นในการติดตั้ง CUDA สามารถดาวน์โหลดได้โดยเข้าเว็บไซต์ [Visual Studio](https://visualstudio.microsoft.com/downloads/) จากนั้นทำการติดตั้งโปรแกรม
 
 #### 1b. ดาวน์โหลด Setup Script
-ดาวน์โหลดไฟล์ tensorflow-gpu.yml จาก [dropbox](https://www.dropbox.com/s/c7krpl8cp510ath/tensorflow-gpu.yml?dl=0) ของฉัน
+ดาวน์โหลดไฟล์ tensorflow-gpu.yml จาก [Dropbox](https://www.dropbox.com/s/c7krpl8cp510ath/tensorflow-gpu.yml?dl=1) ของฉัน
 
 #### 1c. ติดตั้ง Driver Graphics
 ลง Driver ให้ตรงกับ GPU ที่ใช้ และติดตั้งโปรแกรม โดยดาวน์โหลดได้จากเว็บไซต์ [Driver Graphics](https://www.nvidia.com/Download/index.aspx?lang=th)
